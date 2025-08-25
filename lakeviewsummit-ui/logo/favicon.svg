@@ -1,0 +1,33 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#f8fafc"/>
+  
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect x="0" y="0" width="32" height="18" fill="url(#skyGradient)"/>
+  
+  <!-- Mountains (background) -->
+  <polygon points="0,12 8,6 16,10 24,4 32,8 32,18 0,18" fill="#64748b" opacity="0.6"/>
+  
+  <!-- Mountains (foreground) -->
+  <polygon points="4,14 12,8 20,12 28,6 32,9 32,18 0,18" fill="#475569" opacity="0.8"/>
+  
+  <!-- Water/Lake -->
+  <rect x="0" y="18" width="32" height="14" fill="url(#waterGradient)"/>
+  
+  <!-- Water reflection lines -->
+  <line x1="0" y1="22" x2="32" y2="22" stroke="white" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="26" x2="32" y2="26" stroke="white" stroke-width="0.3" opacity="0.2"/>
+  <line x1="0" y1="29" x2="32" y2="29" stroke="white" stroke-width="0.2" opacity="0.15"/>
+</svg>
