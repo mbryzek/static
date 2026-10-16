@@ -1,0 +1,24 @@
+pl/1.md	stripped	[odręczna poprawka na marginesie, nieczytelna]
+pl/1.md	notes	0
+pl/2.md	notes	0
+pl/3.md	notes	0
+pl/4.md	notes	0
+pl/5.md	notes	0
+pl/6.md	notes	0
+pl/7.md	notes	0
+pl/8.md	notes	0
+pl/9.md	notes	0
+pl/front.md	stripped	[Pieczątka biblioteki w lewym górnym rogu]
+pl/front.md	notes	0
+en/1.md	stripped	[handwritten correction in the margin, illegible]
+en/1.md	notes	2
+en/2.md	notes	0
+en/3.md	notes	0
+en/4.md	notes	0
+en/5.md	notes	0
+en/6.md	notes	0
+en/7.md	notes	0
+en/8.md	notes	0
+en/9.md	notes	0
+en/front.md	stripped	[Library stamp in the upper left corner]
+en/front.md	notes	0
