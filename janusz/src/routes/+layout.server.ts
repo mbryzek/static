@@ -1,5 +1,5 @@
 import { loadEdition } from '#lib/server/content.ts';
-import type { TocEntry } from '#lib/thesis/chapter.ts';
+import type { TocEntry } from '#lib/thesis/sections.ts';
 import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = () => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { noteId, type Lang } from '#lib/thesis/chapter.ts';
+  import { noteId, type Lang } from '#lib/thesis/sections.ts';
 
   interface Props {
     notes: string[];

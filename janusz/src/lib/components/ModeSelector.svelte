@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import type { Section } from '#lib/thesis/chapter.ts';
+  import type { Section } from '#lib/thesis/sections.ts';
   import { MODES, MODE_LABELS, MODE_STORAGE_KEY, type Mode } from '#lib/thesis/modes.ts';
 
   interface Props {

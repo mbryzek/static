@@ -1,5 +1,5 @@
 import { chapter } from '#lib/server/content.ts';
-import { SECTIONS, type Section } from '#lib/thesis/chapter.ts';
+import { SECTIONS, type Section } from '#lib/thesis/sections.ts';
 import { MODES, type Mode } from '#lib/thesis/modes.ts';
 import { alignPages } from '#lib/thesis/pages.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';

@@ -2,7 +2,8 @@
 // scripts/pull-content.sh takes of the projects repo at one commit. Built once per build and read
 // by every prerendered page.
 
-import { buildChapter, SECTIONS, type Chapter, type Lang, type Section } from '#lib/thesis/chapter.ts';
+import { buildChapter, type Chapter } from '#lib/thesis/chapter.ts';
+import { SECTIONS, type Lang, type Section } from '#lib/thesis/sections.ts';
 import { parseGlossary, type Term } from '#lib/thesis/glossary.ts';
 
 const pl = import.meta.glob<string>('/content/pl/*.md', { query: '?raw', import: 'default', eager: true });

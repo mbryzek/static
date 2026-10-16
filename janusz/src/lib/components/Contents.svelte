@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import type { TocEntry } from '#lib/thesis/chapter.ts';
+  import type { TocEntry } from '#lib/thesis/sections.ts';
   import type { Mode } from '#lib/thesis/modes.ts';
 
   interface Props {

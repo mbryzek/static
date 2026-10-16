@@ -4,13 +4,7 @@
 import { renderInline, renderMarkdown } from './markdown.ts';
 import { splitPages } from './pages.ts';
 import { reading } from './reading.ts';
-
-export type Lang = 'pl' | 'en';
-
-// The sections published, in reading order. lib (the library labels) and rev-1..rev-3 (the
-// examiners' reports) are deliberately absent: they are not part of the site.
-export const SECTIONS = ['front', '1', '2', '3', '4', '5', '6', '7', '8', '9'] as const;
-export type Section = (typeof SECTIONS)[number];
+import { noteId, type Lang, type Section } from './sections.ts';
 
 export interface RenderedPage {
   scan: string | null;
@@ -41,10 +35,6 @@ export function takeTitle(markdown: string): { title: string | null; rest: strin
   return { title: m[1] ?? null, rest: markdown.slice(0, m.index) + markdown.slice(m.index + m[0].length) };
 }
 
-export function noteId(lang: Lang, n: number): string {
-  return `tn-${lang}-${n}`;
-}
-
 function noteMarker(lang: Lang) {
   return (n: number) => `<sup class="tn" id="${noteId(lang, n)}-ref"><a href="#${noteId(lang, n)}">${n}</a></sup>`;
 }
@@ -62,11 +52,4 @@ export function buildChapter(section: Section, lang: Lang, markdown: string): Ch
     pages,
     notes: notes.map((n) => renderInline(n))
   };
-}
-
-// One line of the contents: a section's title in each language.
-export interface TocEntry {
-  section: Section;
-  pl: string;
-  en: string;
 }
