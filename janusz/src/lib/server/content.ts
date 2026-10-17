@@ -5,10 +5,13 @@
 import { buildChapter, type Chapter } from '#lib/thesis/chapter.ts';
 import { SECTIONS, type Lang, type Section } from '#lib/thesis/sections.ts';
 import { parseGlossary, type Term } from '#lib/thesis/glossary.ts';
+import { parseChangelog, type ChangelogEntry } from '#lib/thesis/changelog.ts';
 
 const pl = import.meta.glob<string>('/content/pl/*.md', { query: '?raw', import: 'default', eager: true });
 const en = import.meta.glob<string>('/content/en/*.md', { query: '?raw', import: 'default', eager: true });
 const glossaryCsv = import.meta.glob<string>('/content/glossary.csv', { query: '?raw', import: 'default', eager: true });
+// Absent until the first correction from a reader lands.
+const changelogMd = import.meta.glob<string>('/content/CHANGELOG.md', { query: '?raw', import: 'default', eager: true });
 const sourceJson = import.meta.glob<Source>('/content/source.json', { import: 'default', eager: true });
 
 // Where the text came from: the projects repo commit, so a page can say which revision it shows.
@@ -30,6 +33,7 @@ function section(files: Record<string, string>, lang: Lang, s: Section): string 
 export interface Edition {
   chapters: Record<Lang, Chapter[]>;
   glossary: Term[];
+  changelog: ChangelogEntry[];
   source: Source;
 }
 
@@ -46,6 +50,7 @@ export function loadEdition(): Edition {
       en: SECTIONS.map((s) => buildChapter(s, 'en', section(en, 'en', s)))
     },
     glossary: parseGlossary(csv),
+    changelog: parseChangelog(changelogMd['/content/CHANGELOG.md'] ?? ''),
     source
   };
   return edition;
