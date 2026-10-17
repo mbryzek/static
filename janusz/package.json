@@ -19,7 +19,8 @@
     "pull-content": "./scripts/pull-content.sh"
   },
   "imports": {
-    "#lib/*": "./src/lib/*"
+    "#lib/*": "./src/lib/*",
+    "#generated/*": "./src/generated/*"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -353,3 +353,122 @@ sup.tn a {
 .credit {
   color: var(--muted);
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.questions {
+  max-width: var(--measure);
+}
+
+.questions fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.questions .visitor {
+  margin-bottom: 2rem;
+}
+
+.questions legend {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question {
+  border-top: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+
+.question dl {
+  margin: 0;
+}
+
+.question dt {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.question dd {
+  margin: 0 0 0.4rem;
+}
+
+.scan-link {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.field {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+  font-family: var(--serif);
+  font-size: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.questions button {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.questions button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.notice,
+.error {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #a1260d;
+}
+
+.lede {
+  color: var(--muted);
+}

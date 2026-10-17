@@ -18,6 +18,7 @@
   <nav class="site-nav" aria-label="Strona · Site">
     <a href={resolve('/')} aria-current={path === '/' ? 'page' : undefined}>Spis treści · Contents</a>
     <a href={resolve('/glossary')} aria-current={path === '/glossary' ? 'page' : undefined}>Słownik · Glossary</a>
+    <a href={resolve('/questions')} aria-current={path === '/questions' ? 'page' : undefined}>Pytania · Questions</a>
     <a href={resolve('/changelog')} aria-current={path === '/changelog' ? 'page' : undefined}>Zmiany · Changelog</a>
   </nav>
 </header>

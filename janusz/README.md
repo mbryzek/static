@@ -13,14 +13,14 @@ The thesis lives in the projects repo under `dads-thesis/`; this site publishes 
 
 It writes:
 
-| Path                     | From dads-thesis                                         |
-| ------------------------ | -------------------------------------------------------- |
-| `content/pl/<s>.md`      | `source/pl/sections/<s>.md`, s = front, 1-9              |
-| `content/en/<s>.md`      | `en/<s>.md`                                              |
-| `content/glossary.csv`   | `glossary/glossary.csv` (polish, english, notes)         |
-| `static/figures/rys-NN.png` | `source/figures/rys-NN.png`, at most 1600 px a side   |
-| `content/source.json`    | the commit, printed in every page footer                 |
-| `content/stripped.txt`   | every bracketed span removed as a transcription description |
+| Path                        | From dads-thesis                                            |
+| --------------------------- | ----------------------------------------------------------- |
+| `content/pl/<s>.md`         | `source/pl/sections/<s>.md`, s = front, 1-9                 |
+| `content/en/<s>.md`         | `en/<s>.md`                                                 |
+| `content/glossary.csv`      | `glossary/glossary.csv` (polish, english, notes)            |
+| `static/figures/rys-NN.png` | `source/figures/rys-NN.png`, at most 1600 px a side         |
+| `content/source.json`       | the commit, printed in every page footer                    |
+| `content/stripped.txt`      | every bracketed span removed as a transcription description |
 
 The library labels (`lib`) and the examiners' reports (`rev-1`, `rev-2`, `rev-3`) are never
 copied. Commit what it writes, then build. When corrections land in projects, pull at the new
@@ -46,6 +46,43 @@ N -->` comments both texts carry; a page only one text has gets an empty cell on
 
 The landing page's contents follow the reader's last choice (kept in `localStorage`), English
 until they make one. `/glossary` lists the glossary; `/changelog` credits correction contributors.
+
+## The questions page
+
+`/questions` asks the open questions in `dads-thesis/notes/reviewer-brief.md` and nothing else,
+in three groups:
+
+- **Contestable glossary terms**: every row of `glossary.csv` whose notes begin `CONTESTABLE`,
+  read off the pull. Answers: agree, prefer another term (the term and a reason), skip.
+- **Judgment calls** and **typescript defects**: transcribed from the brief (and
+  `notes/source-errata.md`) into `src/lib/data/questions.json`:
+
+      {
+        "judgments": [{ "key": "1", "scan": "p012", "polish": "...", "english": "...",
+                        "question": { "pl": "...", "en": "..." } }],
+        "defects":   [{ "key": "p031-a", "scan": "p031", "reading": "what the typescript prints",
+                        "chosen": "what the translation took it to mean" }]
+      }
+
+  A judgment call is answered agree, otherwise, or skip, with a short answer; a defect confirm,
+  disagree (with a reason) or not sure. `scan` is the scan page id of the `<!-- scan pNNN -->`
+  comment; the build refuses one no Polish section has. A judgment's `scan` is optional.
+
+Every question has a stable id, the `question_id` its answers are stored under:
+`glossary-<slug of the Polish term>`, `judgment-<key>`, `defect-<key>`. Never reuse a key for a
+different question: the corrections intake reads answers back by it. Each question links to its
+page of the side-by-side view (a glossary term to the first page whose Polish text uses it).
+
+Answers go to platform's `POST /thesis/submissions` (`spec/thesis.json`, client generated into
+`src/generated/` by `dev api` from `.api/config.pkl`), one per answered question, with the
+visitor's optional name and background and the pulled commit as `site_version`. A question left
+unanswered sends nothing; a defect's "not sure" is sent as `skip`. When platform's per-address
+limit answers 429 the page stops, keeps every unsent answer, and shows the wait. Nothing
+submitted is ever read back; after sending, the page shows a thank-you and nothing else.
+
+Until `questions.json` is transcribed the page asks only the glossary half, so readers are not
+invited to it before then.
+`VITE_API_BASE_URL` points a local build at another platform.
 
 ## Development
 
