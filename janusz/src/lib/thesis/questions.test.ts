@@ -59,5 +59,4 @@ describe('buildQuestions', () => {
     expect(() => buildQuestions([], { judgments: [], defects: [{ ...sample.defects[0]!, key: 'A 1' }] }, pages)).toThrow(/key/);
     expect(() => buildQuestions([], { judgments: [], defects: [sample.defects[0]!, sample.defects[0]!] }, pages)).toThrow(/share/);
   });
-
 });
