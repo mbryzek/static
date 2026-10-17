@@ -6,7 +6,7 @@ import globals from 'globals';
 import prettierConfig from 'eslint-config-prettier';
 
 export default [
-  { ignores: ['.svelte-kit/**', 'build/**', 'node_modules/**', 'content/**', 'fixtures/**'] },
+  { ignores: ['.svelte-kit/**', 'build/**', 'node_modules/**', 'content/**', 'fixtures/**', 'src/generated/**'] },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   ...sveltePlugin.configs['flat/recommended'],
