@@ -2,19 +2,19 @@
 #
 # Take a snapshot of the thesis from the projects repo into this site:
 #
-#   scripts/pull-content.sh <commit>        # dads-thesis at that commit of mbryzek/projects
 #   scripts/pull-content.sh --dir <path>    # a local dads-thesis checkout, as it is on disk
+#
+# There is no mode that clones mbryzek/projects: that repo encrypts every path at rest with
+# git-crypt, so a clone holds ciphertext. The pull reads an unlocked checkout instead.
 #
 # Writes content/ (the published sections in Polish and English, the glossary, the changelog,
 # source.json naming the commit, stripped.txt) and static/figures/ (each rys-NN.png, downscaled for
-# the web). Commit what it writes and rebuild; rerun it at a newer commit when corrections land in
-# projects.
+# the web). Commit what it writes and rebuild; rerun it when corrections land in projects.
 #
 # Only the published sections are copied: front and 1-9. lib (the library labels) and rev-1..rev-3
 # (the examiners' reports) never leave the projects repo.
 set -euo pipefail
 
-REPO_URL=https://github.com/mbryzek/projects.git
 THESIS_PATH=dads-thesis
 SECTIONS=(front 1 2 3 4 5 6 7 8 9)
 # Figures are scanned at print resolution; the widest a reading column ever shows them is well under
@@ -23,36 +23,26 @@ FIGURE_MAX_PX=1600
 
 site=$(cd "$(dirname "$0")/.." && pwd)
 
-usage() { echo "usage: $0 <commit> | --dir <dads-thesis path>" >&2; exit 2; }
-[ $# -ge 1 ] || usage
+usage() { echo "usage: $0 --dir <dads-thesis path>" >&2; exit 2; }
+[ $# -eq 2 ] && [ "$1" = "--dir" ] || usage
 
-work=$(mktemp -d -t thesis-pull)
-trap 'rm -rf "$work"' EXIT
-
-if [ "$1" = "--dir" ]; then
-  [ $# -eq 2 ] || usage
-  src=$(cd "$2" && pwd)
-  commit=$(git -C "$src" rev-parse HEAD 2>/dev/null || echo "")
-  # Dirty means a published file differs from the commit; the rest of the tree is not copied.
-  published=(source/pl/sections en glossary/glossary.csv source/figures)
-  if [ -n "$commit" ] && [ -n "$(cd "$src" && git status --porcelain -- "${published[@]}" 2>/dev/null)" ]; then
-    commit="$commit-dirty"
-  fi
-  # The footer names the repository, never a path on someone's disk: a checkout of the projects
-  # repo reads as mbryzek/projects even when the commit is not pushed yet.
-  remote=$(git -C "$src" remote get-url origin 2>/dev/null || echo "")
-  repo=$(printf '%s' "$remote" | sed -nE 's#.*github\.com[:/]([^/]+/[^/.]+)(\.git)?$#\1#p')
-  [ -n "$repo" ] || repo="local"
-else
-  [ $# -eq 1 ] || usage
-  git clone --quiet --filter=blob:none --no-checkout --sparse "$REPO_URL" "$work/projects"
-  git -C "$work/projects" sparse-checkout set "$THESIS_PATH"
-  git -C "$work/projects" checkout --quiet "$1"
-  src="$work/projects/$THESIS_PATH"
-  [ -d "$src" ] || { echo "$REPO_URL has no $THESIS_PATH at $1" >&2; exit 1; }
-  commit=$(git -C "$work/projects" rev-parse HEAD)
-  repo="mbryzek/projects"
+src=$(cd "$2" && pwd)
+# A locked checkout of the projects repo holds git-crypt ciphertext, which would publish as text.
+if [ -f "$src/source/pl/sections/front.md" ] && head -c 10 "$src/source/pl/sections/front.md" | LC_ALL=C grep -aq GITCRYPT; then
+  echo "$src is git-crypt encrypted: run git-crypt unlock in that checkout first" >&2
+  exit 1
 fi
+commit=$(git -C "$src" rev-parse HEAD 2>/dev/null || echo "")
+# Dirty means a published file differs from the commit; the rest of the tree is not copied.
+published=(source/pl/sections en glossary/glossary.csv source/figures)
+if [ -n "$commit" ] && [ -n "$(cd "$src" && git status --porcelain -- "${published[@]}" 2>/dev/null)" ]; then
+  commit="$commit-dirty"
+fi
+# The footer names the repository, never a path on someone's disk: a checkout of the projects
+# repo reads as mbryzek/projects even when the commit is not pushed yet.
+remote=$(git -C "$src" remote get-url origin 2>/dev/null || echo "")
+repo=$(printf '%s' "$remote" | sed -nE 's#.*github\.com[:/]([^/]+/[^/.]+)(\.git)?$#\1#p')
+[ -n "$repo" ] || repo="local"
 
 need() { [ -f "$1" ] || { echo "missing: $1" >&2; exit 1; }; }
 
