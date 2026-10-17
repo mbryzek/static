@@ -31,17 +31,17 @@ const PLACEHOLDER = /\uE000(\d+)\uE001/g;
 
 const TN = /^TN:\s*/;
 
-// One-word descriptions that are always the transcriber's ([illegible], [blank]).
-const MARKER_WORDS = new Set(['illegible', 'blank', 'stamp', 'signature', 'nieczytelne', 'pieczątka', 'podpis', 'sic']);
+// An uncertain reading in the transcription spec's form: "[?]" or "[?: likely R_4 ...]".
+const UNCERTAIN = /^\?(?::|$)/;
 
-// A transcription description: a descriptor with a colon ("Figure: ..."), a known marker word, or
-// a phrase of three or more words. Citations and units are one or two tokens and never match.
+// A transcription description opens with one of the descriptors the transcription spec uses, the
+// same list as DESC in assemble.py. Anything else in brackets is the thesis's own text: citations
+// ("[3 ÷ 24]"), units, uncertain readings ("[?: ...]"), the translated titles in the bibliography.
+const DESCRIPTOR =
+  /^(?:front cover|back cover|rear|inside|pastedown|label|stamp|handwritten|blank page|bleed-through|dedication page|title page|verso|inserted above line|signature|illegible|library|spine|typed|ex-libris|barcode)/i;
+
 export function isTranscriptionDescription(content: string): boolean {
-  const t = content.trim();
-  if (t === '' || /^[\d\s,;.–-]+$/.test(t)) return false;
-  if (/^\p{L}[\p{L} -]*:/u.test(t)) return true;
-  if (MARKER_WORDS.has(t.toLowerCase())) return true;
-  return t.split(/\s+/).length >= 3;
+  return DESCRIPTOR.test(content.trim());
 }
 
 // The index of the `]` closing the `[` at `open`, counting nested brackets; -1 when unbalanced.
@@ -84,7 +84,11 @@ export function reading(markdown: string, noteMarker: (n: number) => string = (n
     }
     const inner = masked.slice(open + 1, close);
     const isLinkText = masked[open - 1] === '!' || masked[close + 1] === '(' || masked[close + 1] === '[' || masked[close + 1] === ':';
-    if (!isLinkText && TN.test(inner)) {
+    if (UNCERTAIN.test(inner)) {
+      // An uncertain reading stays in the text, but as entities: "[?: ...](T)" in the typescript
+      // must not become a Markdown link.
+      out += masked.slice(i, open) + '&#91;' + inner + '&#93;';
+    } else if (!isLinkText && TN.test(inner)) {
       notes.push(restore(inner.replace(TN, '').trim()));
       out += masked.slice(i, open) + noteMarker(notes.length);
     } else if (!isLinkText && isTranscriptionDescription(restore(inner))) {

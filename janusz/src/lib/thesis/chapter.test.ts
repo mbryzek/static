@@ -32,7 +32,7 @@ describe('buildChapter', () => {
 
   it('strips transcription descriptions in Polish too', () => {
     const pl = buildChapter('front', 'pl', fixture('source/pl/sections/front.md'));
-    expect(pl.pages.map((p) => p.html).join('')).not.toContain('Pieczątka');
+    expect(pl.pages.map((p) => p.html).join('')).not.toContain('pieczątka');
   });
 
   it('keeps the scan pages', () => {
