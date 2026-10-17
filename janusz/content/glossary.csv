@@ -1,0 +1,479 @@
+polish,english,notes,source
+%/10K,% per 10 K,Era-specific unit (PN-74/M-42020 rule). Typeset as %/10 K.,PN-74/M-42020
+addytywność,additivity,Assumption 4.1 c/: parameter value and temperature error add.,thesis
+analiza statystyczna,statistical analysis,,common usage
+aparatura laboratoryjna,laboratory instrumentation,,common usage
+aparatura odbiorcza,receiving instrumentation,p. 9: the downstream instruments in the control system.,common usage
+aproksymacja liniowa,linear approximation,,common usage
+aproksymacja RT = A exp(B/T),exponential (B-parameter) thermistor model,Keep the formula; note that the thesis found it valid only over about 20 K.,common usage
+Archiwum Elektrotechniki / Biuletyn Mera / WNT / PWN,Archiwum Elektrotechniki / Biuletyn Mera / WNT / PWN,Journal and publisher names: keep untranslated in the bibliography.,common usage
+Ashcroft (manometr cyfrowy typ 7781),Ashcroft digital pressure gauge type 7781,,thesis
+automatyka przemysłowa,industrial automation,'process instrumentation' in ISA language; keep 'industrial automation' (it is in the company name).,common usage
+badania,tests,'investigations' where research is meant.,common usage
+badania prototypów / pełne badania wyrobu,prototype tests / full product qualification tests,,common usage
+badania temperaturowo-ciśnieniowe,temperature-pressure tests,,common usage
+belka pomiarowa,sensing beam,Same part as belka tensometryczna.,common usage
+belka tensometryczna,strain-gauge beam,Cantilever carrying the two gauges (Fig. 27). 'cantilever beam' acceptable where the mechanics matter.,common usage
+błąd dodatkowy,additional error,CONTESTABLE. IEC 60051 calls the error due to an influence quantity a 'variation'; OIML/East-bloc texts 'additional error'; ISA 'influence error'. Keep 'additional error' (matches the PN quotation) and gloss once.,IEC 60051; PN-73/M-42024 (quoted)
+błąd łączny,total error,,common usage
+błąd podstawowy,intrinsic error,IEC 60051/VIM: error under reference conditions. 'basic error' is the literal East-bloc rendering; use 'intrinsic error' and gloss once.,IEC 60051; VIM
+błąd pomiaru / błąd pomiarowy,measurement error,,VIM
+błąd przetwarzania,transfer error,"Error of the transfer characteristic at reference temperature (as opposed to temperature error), p. 48.",thesis
+błąd temperaturowy,temperature error,ISA-37.1 defines 'temperature error' exactly in this sense (change of output due to temperature). Preferred over 'thermal error'.,ISA-37.1
+błąd temperaturowy graniczny / błąd graniczny,error limit,"CONTESTABLE. VIM: 'maximum permissible error'; PN/IEC: 'limit of error'. The thesis uses it both as a constant bound (Fig. 2a) and as a limiting slope (Fig. 2b, %/10 K). 'error limit' works for both; use 'maximum permissible error' when the PN accuracy-class rule is quoted.",VIM; IEC 60051
+błąd temperaturowy względny / bezwzględny,relative / absolute temperature error,Thesis p. 6: relative = % of span per stated temperature change; absolute = difference of parameter values.,thesis; VIM
+błąd w stanach nieustalonych,transient error,Error due to temperature gradients during ambient changes.,common usage
+błąd wypadkowy,resultant error,,common usage
+błąd zanikowy /ang. temperature decay/,temperature-decay error,The thesis supplies the English 'temperature decay'. Keep it (with the Polish in a note); modern term would be 'thermal recovery' / 'relaxation'.,thesis
+charakterystyka (termistora) średnia / minimalna / maksymalna,mean / minimum / maximum (thermistor) characteristic,Fig. 33b labels ŚRED / MIN / MAX.,thesis
+charakterystyka przetwarzania,transfer characteristic,"Thesis definition p. 9: the relation U = g(X,T) between measurand and output. Alternatives: 'input-output characteristic', 'calibration curve' (ISA). 'transfer function' is reserved for dynamics in English.",ISA-37.1; Doebelin
+charakterystyka statyczna,static characteristic,,Doebelin
+charakterystyka temperaturowa,temperature characteristic,,common usage
+ciąg klas dokładności,series of accuracy classes,PN rule: an additional error must not exceed the next-lower value in the series (e.g. class 0.4 -> 0.25 %/10 K).,PN-73/M-42024 (quoted)
+cieplna stała czasowa,thermal time constant,,common usage
+ciśnienie atmosferyczne,atmospheric pressure,,common usage
+ciśnienie hydrostatyczne,hydrostatic pressure,,common usage
+ciśnienie początkowe,lower-range pressure,p_o in section 3.2; also 'initial pressure' when a reference point is meant.,ISA-51.1
+ciśnienie wejściowe,input pressure,,common usage
+ciśnienie zakresowe,full-scale pressure,Pressure at the upper range value.,ISA-37.1 (full scale)
+cykl temperaturowy,temperature cycle,,common usage
+część przestrajana / ruchoma (dzielnika),wiper (of the divider),,common usage
+część stała /powtarzalna/ i przypadkowa błędu,systematic (repeatable) and random part of the error,,VIM
+czujnik,sensor,"The thesis's czujnik is the pressure-sensing assembly (bellows + beam + gauges, or the silicon chip) whose raw output u = f(X,T) is not yet standardized. ISA-37.1 would call this the 'sensing element'; 'sensor' is the modern MEMS term and reads better. Never 'detector' or 'probe'.",ISA-37.1; Bryzek 1990
+czujnik ciśnienia,pressure sensor,,Bryzek 1990
+czujnik pomiarowy,measuring sensor,Usually just 'sensor'.,common usage
+czujnik próbkujący temperaturę,temperature-sensing element,'próbkujący' is literally 'sampling' but means 'sensing/picking up' here; do not translate as 'sampling' (DSP connotation).,common usage
+czujnik temperatury,temperature sensor,,common usage
+czujnik wielkości nieelektrycznej,sensor for a non-electrical quantity,,common usage
+czułość ciśnieniowa,pressure sensitivity,,ISA-37.1 (sensitivity)
+czułość przetwarzania,sensitivity,"α_1, the slope of the transfer characteristic (ISA-37.1: ratio of output change to measurand change). 'transfer sensitivity' if the modifier is needed; in ch. 6 the text equates it with gain (wzmocnienie).",ISA-37.1
+czynna powierzchnia mieszka,effective area of the bellows,,common usage
+dioda / dioda Zenera,diode / Zener diode,,common usage
+długość skali 120 000 jednostek,120 000-count display,Era phrase 'scale length' for a DVM resolution.,common usage
+dodatni współczynnik zmian rezystancji,positive temperature coefficient of resistance,,common usage
+dokładność ... % zakresu pomiarowego,accuracy ... % of range,,ISA-37.1
+dokładność kompensacji,compensation accuracy,,common usage
+dokładność odwzorowania,accuracy of approximation,'odwzorowanie' = mapping/representation; here the fit of the polynomial.,common usage
+dokładność przetwarzania,transfer accuracy,Or simply 'accuracy'.,common usage
+dryft,drift,"CONTESTABLE. In the thesis dryft (temperaturowy) means a temperature-induced change, not a change with time. ISA-37.1's terms are 'thermal zero shift' / 'thermal sensitivity shift'; modern data sheets say TCO/TCS. 'zero drift / span drift (with temperature)' is nonetheless common and is used here for readability; add 'temperature' when the Polish has it. Never 'temperature drift' alone without the parameter.",ISA-37.1; common usage
+dryft czułości,sensitivity drift,,ISA-37.1
+dryft graniczny zera / rozpiętości zakresu,limiting zero drift / limiting span drift,Maximum slope in %/10 K (Figs. 41-43 dashed lines).,thesis
+dryft nieliniowości,nonlinearity drift,"Found negligible (0.007 %/10 K), p. 83.",thesis
+dryft szerokości zakresu / dryft rozpiętości zakresu,span drift,Same as dryft zakresu.,ISA-37.1
+dryft wartości początkowej,drift of the lower range value,i.e. zero drift.,ISA-51.1
+dryft zakresu,span drift,ISA-37.1: thermal span (sensitivity) shift. Fig. 30 axis 'Dryft zakresu'.,ISA-37.1; common usage
+dryft zera,zero drift,ISA-37.1: thermal zero shift. Fig. 30 axis 'Dryft zera'.,ISA-37.1; common usage
+dwójmostek / mostek dwukrotny,double bridge,See mostek wielokrotny (Kelvin collision).,thesis
+dwójnik,two-terminal network,'one-port' in network theory; 'dipole' is a false friend. 'temperature-dependent two-terminal network' for 'dwójnik o rezystancji zależnej od temperatury'; 'network' alone once established.,common usage
+dzielnik jednotermistorowy / dwutermistorowy,single-thermistor / two-thermistor divider,,thesis
+dzielnik napięciowy,voltage divider,,H&H
+dzielnik potencjometryczny,potentiometric divider,A potentiometer used as an adjustable divider across a bridge diagonal.,common usage
+dzielnik rezystancyjno-termistorowy,resistor-thermistor divider,,thesis
+dzielnik rezystorowy / rezystancyjny,resistive divider,,H&H
+dzielnikowanie sygnału,division of the signal,Attenuation by a divider.,common usage
+egzemplarz,unit,Individual transducer.,common usage
+ekstremum,extremum,,common usage
+elektroniczny układ przetwarzający,electronic conditioning circuit,The electronics that process the sensor signal ('signal conditioning' is the ISA term). 'processing circuit' acceptable.,ISA-37.1
+elektryczny przetwornik wielkości nieelektrycznych,electrical transducer for non-electrical quantities,,common usage
+element,component,"Polish element = circuit component (resistor, thermistor...). Use 'component' for hardware, 'element' for abstract elements (element of a set) and for 'element kompensujący'.",common usage
+element czuły na temperaturę,temperature-sensitive element,,common usage
+element kompensujący / element kompensacyjny,compensating element,'compensation component' when a physical resistor is meant.,common usage
+element korygujący,correcting element,,common usage
+element półprzewodnikowy,semiconductor element,,common usage
+element produkowany seryjnie,mass-produced component,'off-the-shelf'.,common usage
+element próbkujący temperaturę,temperature-sensing element,See czujnik próbkujący temperaturę.,common usage
+element przetwarzający,transducing element,p. 15: the primary element (e.g. a strain gauge) that converts the measurand; ISA-37.1 'sensing element' / 'transduction element'.,ISA-37.1
+element regulacyjny / element przestrajany,adjusting element / adjustable element,Potentiometers P_i.,common usage
+element typu Darlington,Darlington pair,,H&H
+element ustalający warunki kompensacji,compensation-setting element,One per compensation temperature per parameter (thesis claim).,thesis
+element zerujący,nulling element,,common usage
+elementy dyskretne / scalone,discrete / integrated components,'monolithic' where the text means on the same chip.,common usage
+fala prostokątna / prąd o kształcie prostokątnym,square wave / square-wave current,,common usage
+"firma Balley, USA",Bailey (USA),"Thesis spelling 'Balley' is almost certainly Bailey Meter Co.; ref. [48] is J.C. Martin, 'Silicon pressure transducer circuit'. Keep thesis spelling in the Polish, correct in English with a note.",thesis [48]
+"firma Bell and Howell / Bell Howell, USA",Bell & Howell (USA),Spelled both ways in the thesis; use 'Bell & Howell'.,thesis
+"firma Honeywell, USA",Honeywell (USA),"Refs. [33,39,40,72].",thesis
+"firma ITT, USA",ITT (USA),Ref. [57].,thesis
+"firma Kulite, USA",Kulite (USA),Kulite Semiconductor Products; ref. [77]. (Janusz Bryzek later worked there.),thesis
+"firma National Semiconductors, USA",National Semiconductor (USA),"Thesis has the plural; the company is National Semiconductor Corp. Refs. [1,42,70].",thesis
+"firma Statham, USA",Statham (USA),Statham Instruments; ref. [71].,thesis
+funkcja cząstkowa,component function,"CONTESTABLE. f_j(T) in (25)-(27). Literal 'partial function' has a fixed, different meaning in mathematics and collides with 'partial derivative/differential equation' (also cząstkowy in Polish). 'component function' or 'factor function' (they are multiplied) avoids this.",thesis
+funkcja nieliniowości,nonlinearity function,Difference D between divider ratio and a straight line through two temperatures (appendix 9.1).,thesis
+gałąź mostka,bridge arm,Polish gałąź = arm (not 'branch'); 'przeciwne gałęzie' = opposite arms.,W&H
+generator sterujący,drive generator,Square-wave source driving the heater (Fig. 13).,common usage
+generator sygnałów kompensujących,compensating-signal generator,Blocks H_0 ... H_n (Fig. 17).,thesis
+godz.,h,,common usage
+gradient temperatury,temperature gradient,,common usage
+grzejnik,heater,Transistor T_4 used as on-chip heater.,"thesis [43,70]"
+Hewlett-Packard 3490A,Hewlett-Packard 3490A digital voltmeter,,thesis
+hipoteza / odrzucenie hipotezy,hypothesis / rejecting the hypothesis,,common usage
+histereza ciśnieniowa,pressure hysteresis,ISA-37.1 simply 'hysteresis'.,ISA-37.1
+histereza mechaniczna,mechanical hysteresis,,ISA-37.1
+histereza temperaturowa,temperature hysteresis,'thermal hysteresis' also used.,ISA-37.1
+i inni,et al.,,common usage
+IAP PW,"IAP PW (Institute of Industrial Automation, Warsaw University of Technology)",Expansion inferred (Instytut Automatyki Przemysłowej Politechniki Warszawskiej); the thesis gives only the abbreviation. Method [61] Włodarski & Bryzek.,thesis [61]
+iloraz (kroku),ratio (of successive values),"Geometric step 1.64, 1.16, 1.04, 1.01.",thesis
+impedancja,impedance,Z_1 ... Z_12 in the multiple bridge.,common usage
+impedancje częstotliwościowe i/lub temperaturowe,frequency- and/or temperature-dependent impedances,,thesis
+indywidualny program korekcji,individual correction program,"Stored in ROM per unit (p. 16, forward-looking remark).",thesis
+iteracyjne wyznaczanie,iterative determination,,common usage
+izolująca warstwa dielektryczna,insulating dielectric layer,,common usage
+jednostki oderwane od zakładu produkcyjnego,institutions detached from the manufacturing plant,Universities and institutes.,common usage
+język Fortran,Fortran,,common usage
+K (kelwin) jako jednostka temperatury,K (kelvin),"Era/house style: the thesis gives all temperatures in kelvin (253 K-333 K, 293 K), °C only in PN quotations. Keep K; a translator's note may add °C equivalents once.",thesis
+kabel kompensacji,compensation cable,Extension cable to the potentiometer board outside the chamber.,thesis
+kalibracja / wykalibrowany,calibration / calibrated,,VIM
+karta katalogowa,data sheet,,common usage
+KDL,the people's democracies (socialist-bloc countries),Kraje Demokracji Ludowej; ref. [82].,common usage
+kierunek przewodzenia / zaporowy,forward / reverse direction,,common usage
+klasa (przetworników) liniowa / kwadratowa / sześcienna,linear / quadratic / cubic class (of transducers),"Thesis classification by degree of the error polynomial, p. 7.",thesis
+klasa dokładności,accuracy class,,IEC 60051
+klej,adhesive,Gauge-bonding adhesive.,W&H
+komora temperaturowa / klimatyczna / zmiennych temperatur,temperature chamber / climatic chamber / variable-temperature chamber,All the same apparatus; 'environmental chamber' in US usage.,common usage
+kompensacja błędów temperaturowych,compensation of temperature errors,,thesis
+kompensacja dwuparametrowa,two-parameter compensation,Zero and span.,thesis
+kompensacja n-punktowa / dwupunktowa / trójpunktowa,n-point / two-point / three-point compensation,Points = temperatures including the reference (p. 36: three-point = two compensation temperatures).,common usage
+kompensacja niepełna,incomplete compensation,See kompensacja pełna. Thesis definition (p. 58): m·n < s.,thesis
+kompensacja pełna,complete compensation,"CONTESTABLE. Thesis definition: transducer error identically zero over the operating range. 'full compensation' is equally attested; 'complete/incomplete' pairs better than 'full/partial' (partial suggests a fraction, whereas niepełna means fewer compensation temperatures than the polynomial degree).",thesis
+kompensacja programowa / układowa (w części cyfrowej),software / hardware compensation,p. 15 d/: in the digital part of the control system.,common usage
+kompensacja temperaturowa,temperature compensation,,ISA-37.1; patents
+kompensacja układowa,circuit compensation,Compensation by means of circuitry (as opposed to technological or mechanical).,thesis
+kompensacja wartości początkowej / końcowej (zakresu),compensation of the lower / upper range value,,ISA-51.1
+kompensacja wpływu temperatury,compensation of the effect of temperature,Title wording; 'temperature compensation' elsewhere.,thesis
+kompensacja zakresu,span compensation,See zakres (jako parametr).,ISA-37.1 (thermal span shift)
+kompensacja zera,zero compensation,,common usage
+kompensacja zgrubna,coarse compensation,,common usage
+komputer ODRA 1305,ODRA 1305 computer,"Polish mainframe (Elwro, ICL 1900 compatible). Keep name; gloss once.",common usage
+końcówki potencjometru,end terminals of the potentiometer,,common usage
+końcówki tensometrów,gauge leads,,W&H
+korekcja,correction,,common usage
+korekcja liniowości,linearity correction,,common usage
+korektor laserowy,laser trimmer,Verb form: laser trimming.,common usage
+koszt wytwarzania / cena sprzedażna / cena jednostkowa,manufacturing cost / selling price / unit price,,common usage
+kPa,kPa,SI already; 20-100 kPa is the pneumatic standard signal (equivalent of 3-15 psi / 0.2-1 bar).,IEC 60382
+krańce / krańcowe temperatury zakresu pracy,limits of the operating temperature range,,common usage
+krotność mostka,bridge multiplicity,"Number of cascaded stages (1, 2, 3).",thesis
+krzem,silicon,,common usage
+krzemowa membrana pomiarowa,silicon sensing diaphragm,'diaphragm' is the pressure-sensor term; 'membrane' is the cognate but reads as biology/chemistry. Patent [9]: 'semiconductor pressure diaphragm'.,Bryzek 1990; patent [9]
+krzywa drugiego / czwartego rzędu,second-order / fourth-order curve,,common usage
+Laboratorium Badań Wyrobów Działu Kontroli Jakości,Product Testing Laboratory of the Quality Control Department,,thesis
+liczba naturalna,natural number,Positive integer.,common usage
+liczność (zbioru),size (of the population),,common usage
+linearyzacja / układ linearyzujący,linearization / linearizing circuit,,common usage
+linia przenikania (płaszczyzn),line of intersection (of surfaces),Fig. 1.,common usage
+liniowa charakterystyka przetwarzania,linear transfer characteristic,,common usage
+literatura patentowa / zgłoszenie patentowe / zastrzeżenia patentowe,patent literature / patent application / patent claims,,common usage
+mała wyższego rzędu / mała drugiego rzędu,quantity of higher (second) order of smallness,Russian-style phrase ('малая высшего порядка'); 'second-order effect' in plain English.,common usage
+manometr cyfrowy,digital pressure gauge,'digital manometer' is also used (TI 'digital quartz manometer' [80]); 'pressure gauge' avoids the liquid-column connotation.,common usage
+mechanizm przebicia /zenerowski lub lawinowy/,breakdown mechanism (Zener or avalanche),,common usage
+medium pomiarowe / medium mierzone,measured medium,'process fluid' in industrial English; keep 'medium' for fidelity.,common usage
+membrana,diaphragm,,Bryzek 1990
+Mera-Pnefal,Mera-Pnefal,"Warsaw manufacturer of pneumatic and electronic process instruments (Mera combine). Keep; gloss once as 'Mera-Pnefal, Warsaw'.",thesis
+Meratronik V-316,Meratronik V-316 power supply,Polish instrument maker.,thesis
+metoda / wariant,method / variant,,common usage
+metoda kompensacji,compensation method,,thesis
+mieszek sprężysty / zespół mieszka,bellows / bellows assembly,,common usage
+"MIFI, ZSRR","MIFI (Moscow Engineering Physics Institute), USSR",Ref. [37].,thesis [37]
+mikroprocesor,microprocessor,,common usage
+minimalizacja,minimization,,common usage
+model / prototyp,engineering model / prototype,p. 102: three 'models' then three 'prototypes'.,common usage
+moduł (wartości),absolute value,'modulus' acceptable; |δ(T)|.,common usage
+moduł Younga,Young's modulus,,common usage
+mostek,bridge,Wheatstone bridge unless qualified.,W&H
+mostek cząstkowy,constituent bridge,One stage M_i of the multiple bridge.,thesis
+mostek jednokrotny,single bridge,"MK_1, MK_2 in ch. 6. Alternative: 'single-stage bridge'.",thesis
+mostek pomiarowy,measuring bridge,MP in Fig. 31: the bridge containing the gauges.,W&H
+mostek pomocniczy,auxiliary bridge,,common usage
+mostek tensometryczny,strain-gauge bridge,,W&H
+mostek trójkrotny,triple bridge,Section 5.1. Alternative: 'three-stage bridge'.,thesis
+mostek wielokrotny,multiple bridge,"CONTESTABLE. Author's coinage: a chain of bridges in which each bridge's output diagonal supplies the next. Options: 'multiple bridge', 'cascaded bridge', 'multi-stage bridge'. 'multiple' preserves jednokrotny/dwukrotny/trójkrotny = single/double/triple, but 'double bridge' collides with the Kelvin double bridge; a translator's note is needed either way.",thesis
+na każde 10 °C zmiany temperatury,per 10 °C of temperature change,PN wording; the thesis body uses K.,PN-74/M-42020 (quoted)
+na zasadzie małej wyższych rzędów,as a higher-order small quantity,,common usage
+nachylenie,slope,,common usage
+nachylenie błędu granicznego,slope of the error limit,PN-74/M-42020 method: error limit expressed as a slope per 10 K.,thesis
+nachylenie nieliniowości / nachylenie funkcji nieliniowości,slope of the nonlinearity (function),Optimisation criterion in sections 6.4.3-6.4.4 and the appendix; the maximum slope M in %/10 K of the divider nonlinearity vs temperature.,thesis
+nadciśnienie,gauge pressure,Thesis defines it as measured pressure minus atmospheric. NOT 'overpressure' (which means pressure beyond rating).,ISA-37.1 (gage pressure)
+naklejony (tensometr),bonded (strain gauge),,W&H
+napięcie niezrównoważenia mostka,bridge unbalance voltage,Offset voltage at zero pressure.,W&H
+napięcie odniesienia,reference voltage,,H&H
+napięcie pomocnicze,auxiliary voltage,,common usage
+napięcie przesuwające punkt początkowy charakterystyki,zero-suppression voltage,Honeywell feature shifting the start point by ±100 % of span; ISA-51.1 'suppressed/elevated zero'.,ISA-51.1
+napięcie przewodzenia,forward voltage,U_p in section 3.2 (collides with U_p lower-range output elsewhere).,common usage
+napięcie sumacyjne,common-mode voltage,"CONTESTABLE but standard Polish EE usage (napięcie sumacyjne = common-mode, napięcie różnicowe = differential). Do not translate literally as 'sum voltage'.",common usage (Polish EE)
+napięcie zaporowe,reverse voltage,U_z; in the Zener context the breakdown voltage.,common usage
+napięcie zasilające,supply voltage,,common usage
+napięcie zasilające mostek,bridge excitation voltage,ISA-37.1 'excitation'. Plain 'supply voltage' for the 25 V rail.,ISA-37.1
+napięcie znamionowe / rezystancja znamionowa,nominal voltage / nominal resistance,,common usage
+naprężenia ściskające / rozciągające,compressive / tensile stress,naprężenie = stress; odkształcenie = strain. The thesis speaks of stresses in the beam; keep 'stress'. ε in the gauge-factor formula is strain.,W&H
+naprężenia wstępne belki,beam preload,Pre-stress of the beam at the lower range value.,common usage
+nastawa,setting,Position/value of an adjustable element; 'adjustment' as the act.,common usage
+nawijanie rezystorów,winding resistors,,common usage
+nieliniowość,nonlinearity,ISA-37.1 'linearity' is specified as a nonlinearity figure. Keep 'nonlinearity' (unhyphenated).,ISA-37.1
+niepowtarzalność temperaturowa,temperature non-repeatability,Permanent change of a parameter after temperature excursions (p. 12).,thesis; ISA-37.1 (repeatability)
+niezależność jednokierunkowa (nastaw),unidirectional independence (of the settings),CONTESTABLE. Key concept: adjusting at temperature T_k does not disturb settings made at T_1 ... T_{k-1} (triangular structure). 'one-way independence' is plainer; 'unidirectional' matches the register of a thesis. Define once and keep.,thesis
+niskoomowy tensometr,low-resistance gauge,e.g. 100 ohm.,common usage
+"normalizacja (charakterystyki, sygnału)",standardization (of the signal),CONTESTABLE. Bringing the output to a standard signal; 'normalization' is the cognate but in English means scaling to 1. For the block N use 'normalizing circuit'; for the appendix's 'normalizację wyników' use 'normalization' (mathematical).,IEC 60381
+np.,e.g.,,common usage
+obciążenie mostka / prąd obciążenia,bridge loading / load current,,common usage
+obiekt sterowania,controlled plant,,common usage
+obwody kompensacji,compensation circuitry,,common usage
+odchylenie standardowe z próby,sample standard deviation,,common usage
+odwzorowanie graficzne,graphical representation,,common usage
+ogranicznik ruchu belki,beam travel stop,Overload stop (Fig. 27).,common usage
+ok.,approx.,,common usage
+oprzyrządowanie technologiczne,production tooling,,common usage
+optymalizacja,optimization,,common usage
+Ośrodek Badawczo-Rozwojowy Automatyki Przemysłowej (OBRAP / OBR AP) Mera-Pnefal,Mera-Pnefal Industrial Automation Research and Development Centre,Abbreviation appears as both OBRAP and OBR AP.,thesis
+ośrodek mierzony,measured medium,PN standard wording.,PN-74/M-42020 (quoted)
+pamięć stała /ROM/,read-only memory (ROM),,common usage
+parametry metrologiczne,metrological parameters,"East-bloc phrasing; English data sheets say 'performance characteristics'. Keep 'metrological' once, then 'performance' where it reads better.",common usage
+Patent PRL nr ... / Patent USA nr ... / Patent Wielkiej Brytanii nr ...,Polish patent No. ... / US patent No. ... / British patent No. ...,,common usage
+pełny mostek / pół mostka / ćwierć mostka,full bridge / half bridge / quarter bridge,,W&H
+personel wysoko wykwalifikowany,highly qualified personnel,,common usage
+PHZ Polservice,Polservice foreign-trade enterprise,Patent agent for foreign filings (ref. [82]).,thesis
+pierwiastki rzeczywiste,real roots,,common usage
+piezorezystancyjny przetwornik ciśnienia,piezoresistive pressure transducer,Chapter 6 title.,Smith 1954; Bryzek 1990
+płaszczyzna / powierzchnia,plane / surface,,common usage
+płynna regulacja zera,continuous zero adjustment,,common usage
+płytka drukowana,printed-circuit board,,common usage
+płytka krzemu,silicon chip,'die' in fab language; 'chip' for a general reader.,common usage
+płytka wyprowadzeń (elektrycznych),terminal board,Fig. 27: small board to which the gauge leads are soldered.,common usage
+PN-73/M-42024,"Polish Standard PN-73/M-42024, Industrial automation - Analogue electrical elements and devices - Requirements and tests",Cited for accuracy-class series and the nonlinearity/temperature-error rule.,thesis footnote p. 14
+PN-74/M-42020,"Polish Standard PN-74/M-42020, National System of Automation and Measurement POLMATIK - General requirements and tests",Cited for the rule: additional errors specified per 10 °C of ambient/medium temperature change. Keep the PN number; translate the title once.,thesis footnote p. 14
+pneumoelektryczny przetwornik ciśnienia,pneumatic-to-electric pressure transducer,"Era/Polish product category: input is the pneumatic standard signal 20-100 kPa, output an electric standard signal. 'pneumo-electric converter' also seen; avoid 'P/E converter' (too terse for a keepsake).",common usage
+pochodna cząstkowa,partial derivative,,common usage
+podatność (mieszka),compliance (of the bellows),,common usage
+podstawa,base,Fig. 27 label.,common usage
+Politechnika Warszawska,Warsaw University of Technology,,common usage
+POLMATIK,POLMATIK,Name of the Polish national automation and measurement system; keep.,thesis
+potencjometr,potentiometer,,common usage
+powtarzalność,repeatability,,VIM; ISA-37.1
+poziom gęstości przeszukiwania,search-density level,Appendix 9.2: four nested search grids.,thesis
+półprzewodnikowy przetwornik ciśnienia,semiconductor pressure transducer,Title term. Thesis definition p. 9-10: transducer whose sensor is built from semiconductor elements and converts gauge pressure to a standardized electrical signal.,"thesis; patents [42,70]"
+pracownicy nie posiadający wysokich kwalifikacji,unskilled staff,,common usage
+prawa autorskie (na rynku),proprietary rights,"p. 6: literally 'copyright', but the sense is protection of the maker's IP on the market.",common usage
+prawdopodobieństwo,probability,,common usage
+prąd stały,direct current,,common usage
+prąd zasilania,supply current,,common usage
+procedura kompensacji,compensation procedure,,thesis
+procesy technologiczne,industrial processes,'technological process' is a calque.,common usage
+produkcja seryjna,series production,'volume production'.,common usage
+program komputerowy / obliczenia maszynowe,computer program / computer calculations,'maszyna cyfrowa' = digital computer (era).,common usage
+prosta,straight line,,common usage
+protokół badań,test report,Ref. [89].,common usage
+próbna partia / partia,sample batch / batch,,common usage
+"przebieg (błędu, sygnału)",course (of the error / signal),"'behaviour', 'shape' or 'variation with temperature' by context; Fig. 23 'schematyczny przebieg' = schematic shape.",common usage
+przeciążenie,overload,,ISA-37.1
+Przedsiębiorstwo Automatyki Przemysłowej (PAP) Mera-Pnefal,Mera-Pnefal Industrial Automation Enterprise,,thesis
+przedział,interval,,common usage
+przedział ufności / poziom ufności,confidence interval / confidence level,,common usage
+przekątna mostka,bridge diagonal,CONTESTABLE. 'napięcie na przekątnej mostka' = 'bridge output voltage' is idiomatic; keep 'output diagonal' where the geometry matters (e.g. the next bridge is supplied from the diagonal). ISA/W&H use 'output terminals'.,W&H
+przestrajanie,adjusting,Literally 'retuning'.,common usage
+przesunięcie zera / skokowe przesunięcie zera,zero offset / stepped zero offset,"Honeywell circuit: coarse offset by a resistive divider, fine by potentiometer.",common usage
+przetwornik,transducer,"Polysemous. Default 'transducer' (sensor + conditioning electronics with a standardized output; the 1970s semiconductor-sensor literature and the cited US patents say 'pressure transducer'). In process-instrumentation English a device with a 4-20 mA output is a 'transmitter' (IEC 60770); use 'transmitter' only where the text stresses the industrial product (A271/A272, 'przetwornik międzysystemowy'). 'converter' only for 'przetwornik analogowo-cyfrowy'.",ISA-37.1; IEC 60770; Zias & Hare 1972 [1]
+przetwornik analogowo-cyfrowy,analog-to-digital converter,Here przetwornik = converter.,common usage
+przetwornik ciśnienia,pressure transducer,,"ISA-37.1; US patents cited [42,48,70]"
+przetwornik międzysystemowy,inter-system converter,Mera 'Eftronik' product class (type A271): converts between the pneumatic and electric signal systems. Keep the literal rendering; explain once in a translator's note.,thesis [33]
+przetwornik pomiarowy,measuring transducer,Thesis definition (p. 9): sensor + electronic conditioning circuit that brings the output to a standard signal. Often just 'transducer' once established.,ISA-37.1
+przetwornik temperatury,temperature transducer,,ISA-37.1
+przetwornik typu A271 / A272,type A271 / A272 transducer,Mera-Pnefal product designations; keep as is.,thesis
+przetwornik wielkości nieelektrycznych,transducer for non-electrical quantities,"East-bloc textbook phrase ('преобразователь неэлектрических величин'). Idiomatic English would be 'transducer for physical quantities', but keep the literal form; it is the thesis's own generalisation.",common usage (Soviet/Polish metrology)
+przetworniki typu Class 41 firmy Honeywell,Honeywell Class 41 transducers,Product name; keep.,"thesis [33,39,40]"
+przyrost sygnału wyjściowego,output signal increment,,common usage
+przyrząd pomiarowy,measuring instrument,,VIM
+przyrząd półprzewodnikowy,semiconductor device,,common usage
+punkt początkowy charakterystyki,starting point of the characteristic,,common usage
+Rada Techniczna (Przedsiębiorstwa),Technical Council (of the enterprise),Body that approved production release.,thesis
+regulacja / regulowany,adjustment / adjustable,,common usage
+rewersyjnie spolaryzowane złącze,reverse-biased junction,,common usage
+rezystancja cieplna / termiczna,thermal resistance,,common usage
+rezystancja obciążenia,load resistance,,common usage
+rezystancja początkowa (tensometru),initial resistance,Unstrained resistance at reference temperature; 'nominal resistance' where a catalogue value is meant.,W&H
+rezystancja zastępcza (wyjściowa),equivalent (output) resistance,Thevenin resistance.,H&H
+rezystor,resistor,,common usage
+rezystor bocznikujący / bocznikować,shunt resistor / to shunt,,H&H
+rezystor grubowarstwowy,thick-film resistor,,common usage
+rezystor normalny,standard resistor,"500 or 2500 ohm, ±0.02 %.",VIM (measurement standard)
+rezystor skompensowany temperaturowo,temperature-compensated resistor,,common usage
+rezystory metalowe,metal resistors,"As temperature sensors (copper, approx. 2 %/10 K): 'metal resistance elements'.",common usage
+rezystory nawijane (miedziane i manganinowe),wire-wound (copper and manganin) resistors,Old A271 compensation practice.,common usage
+rezystywność materiału podłoża,substrate resistivity,,common usage
+RFN / ZSRR / PRL / Wielka Brytania,Federal Republic of Germany / USSR / Polish People's Republic / United Kingdom,Patent jurisdictions in the bibliography.,common usage
+"rozkład normalny N(μ,σ)","normal distribution N(μ,σ)",,common usage
+rozpiętość zakresu (pomiarowego),span,Synonym of szerokość zakresu; used in ch. 6 (rozpiętość zakresu 80 kPa).,ISA-51.1
+rozprawa doktorska / praca doktorska,doctoral dissertation,,common usage
+rozrównoważenie / rozstrojenie mostka,bridge unbalance,'detuning' is a false friend for rozstrojenie here.,W&H
+rozrzut,spread,Unit-to-unit variation of a parameter; 'scatter' for the plotted cloud (Fig. 30 'Rozrzut').,common usage
+rozrzut rezystancji,spread of resistance,Unit-to-unit variation; 'scatter' also acceptable.,common usage
+rozwiązanie,design,'solution' only for equations; 'znane rozwiązania kompensacji' = known compensation schemes/designs.,common usage
+rozwiązanie układowe,circuit design,'circuit solution' is a calque; 'rozwiązania kompensacji' = compensation schemes.,common usage
+równanie różniczkowe cząstkowe,partial differential equation,,common usage
+równość tożsamościowa,identity,(37).,common usage
+równowaga mostka / warunek równowagi,bridge balance / balance condition,,W&H
+różnicowe włączenie tensometrów,differential connection of the gauges,Gauges in adjacent arms with opposite strain.,W&H
+rys. / tablica / pkt.,Fig. / Table / Section,,common usage
+rząd wielomianu,degree of the polynomial,See wielomian stopnia n.,common usage
+rzędne prostej,ordinates of the straight line,Appendix step 4.,common usage
+schemat blokowy / układ blokowy,block diagram,,common usage
+schemat ideowy,circuit diagram,'schematic' (US). Fig. 39 'uproszczony schemat ideowy' = simplified circuit diagram.,common usage
+seria produkcyjna,production lot,,common usage
+sieć krystaliczna,crystal lattice,,common usage
+skompensowany / nieskompensowany,compensated / uncompensated,,common usage
+spadek napięcia,voltage drop,,common usage
+sprowadzić (błąd) do czujnika,refer (the error) to the sensor,,H&H
+sprowadzić (błąd) do zera,bring (the error) to zero,'null' where a bridge/potentiometer adjustment is meant.,common usage
+stabilność,stability,,ISA-37.1
+stabilny temperaturowo,temperature-stable,Of a resistor: low temperature coefficient.,common usage
+stabilny w czasie,long-term stable,,common usage
+stała / stałe,constant / constants,,common usage
+stan ustalony / nieustalony,steady state / transient state,,common usage
+stopień integracji,level of integration,,common usage
+superpozycja,superposition,,common usage
+suwak potencjometru / położenie suwaka,potentiometer wiper / wiper position,,H&H
+sygnał kompensujący,compensating signal,"H(T), h_i(T).",thesis
+sygnał prądowy / napięciowy,current / voltage signal,,IEC 60381
+sygnał różnicowy,differential signal,,H&H
+sygnał wyjściowy / wejściowy,output / input signal,,common usage
+sygnał wyjściowy 0-5 / 0-20 / 0-50 / 4-20 / 10-50 mA; 1-5 V; 0-10 V,output signal 0-5 / 0-20 / 0-50 / 4-20 / 10-50 mA; 1-5 V; 0-10 V,Section 6.2. 10-50 mA and 0-50 mA are era signals.,IEC 60381
+sygnał zakłócający,interfering signal,'disturbance' in control language.,common usage
+sygnał zakresowy,full-scale signal,Output change over the span; 'span signal' acceptable.,common usage
+"sygnały prądowe 0...6 mA, 4...20 mA; napięciowe 1...5 V","current signals 0-6 mA, 4-20 mA; voltage signals 1-5 V",Footnote p. 9. '0...6 mA' as printed (0-5 mA elsewhere in the thesis); do not silently correct.,IEC 60381
+"system ""Eftronik""",Eftronik system,Mera electronic instrumentation system (ref. [33]); keep.,thesis [33]
+szerokość zakresu pomiarowego,span,ISA-51.1: span = algebraic difference between upper and lower range values. The thesis uses szerokość and rozpiętość synonymously.,ISA-51.1; ISA-37.1
+szkic projektowy,design outline,,common usage
+szt.,pcs / units,'1000 szt.' = 1000 units.,common usage
+średni błąd kwadratowy,mean-square error,,common usage
+średnia z próby,sample mean,,common usage
+technika grubowarstwowa,thick-film technology,,common usage
+technika planarna,planar technology,,common usage
+temperatura kompensacji,compensation temperature,"T_1 ... T_n; thesis coinage, keep literal.",thesis
+temperatura otoczenia,ambient temperature,,ISA-37.1
+temperatura pierwszej / drugiej / ostatniej kompensacji,first / second / last compensation temperature,,thesis
+temperatury dyskretne,discrete temperatures,,common usage
+temperatury ekstremalne,temperature extremes,,common usage
+tensometr,strain gauge,British spelling 'gauge' chosen for the whole translation; US patents in the bibliography spell 'gage'. Keep bibliography titles verbatim. The thesis uses tensometr for both bonded silicon gauges (ch. 6) and diffused piezoresistors (ch. 3); see tensorezystor.,W&H; ISA-37.1
+tensometr krzemowy,silicon strain gauge,"Bonded (naklejony) silicon bar gauges, section 6.3.1.",W&H
+tensometr rozciągany,gauge in tension,,W&H
+tensorezystor,piezoresistor,Calque of Russian тензорезистор. Used for resistors diffused into a silicon diaphragm; the MEMS term is 'piezoresistor' (or 'diffused resistor'). Not 'tensoresistor'.,Smith 1954; Bryzek 1990
+tensorezystor bierny,passive (pressure-insensitive) piezoresistor,Honeywell circuit: diffused resistors that respond to temperature but not pressure; a 'dummy gauge' in strain-gauge language.,W&H (dummy gauge)
+termistor,thermistor,NTC110 type (Polish NTC thermistor); keep type designations.,common usage
+termostatowanie czujnika,thermostatic control of the sensor,Keeping the sensor at constant temperature so that compensation is unnecessary.,common usage
+Texas Instrument(s),Texas Instruments,Ref. [80] digital quartz manometer.,thesis
+tożsamościowe sprowadzenie błędu do zera,reducing the error identically to zero,Central claim: Δ(T) ≡ 0 over the whole temperature range.,thesis
+tożsamość / tożsamościowo,identity / identically,≡ ; 'tożsamościowo równy zeru' = identically zero.,common usage
+tranzystor,transistor,T_1 ... T_4 in figures (collides with temperatures T_1 ...).,common usage
+tranzystor pracujący w układzie diody,diode-connected transistor,,H&H
+twierdzenie / dowód / c.b.d.d.,theorem / proof / Q.E.D.,c.b.d.d. = co było do dowiedzenia.,common usage
+twierdzenie Weierstrassa,Weierstrass approximation theorem,"Footnote p. 40, ref. [83].",common usage
+typoszereg,standard value series,E-series of thermistor values.,common usage
+tzn.,i.e.,,common usage
+tzw.,so-called,Used for 'zera' and 'zakresu'; in English the quotation marks alone usually suffice.,common usage
+ugięcie belki,beam deflection,,common usage
+układ,circuit,Highly polysemous: układ elektroniczny = electronic circuit; układ blokowy = block diagram; układ pomiarowy = measuring setup; układ regulacji = control system; rozwiązanie układowe = circuit design. Choose by collocation.,common usage
+"układ ""n·V_BE"" / źródło napięciowe n·V_BE",V_BE multiplier,Keep the thesis's quoted 'n·V_BE' and gloss as V_BE multiplier.,H&H
+układ automatycznej regulacji,automatic control system,,common usage
+układ bilansowania ilości wyrobu finalnego,material-balance (production accounting) system,,common usage
+układ elektroniczny posiadający pamięć,electronic circuit with memory,,thesis
+układ kompensacji / układ kompensacyjny / układ kompensujący,compensation circuit,,common usage
+układ normalizujący,normalizing circuit,"Block N, Fig. 15, coefficients b_1, b_2, b_3. Functionally a signal conditioner.",thesis
+układ pamięci napięcia,voltage-memory circuit,Era term for a sample-and-hold (Fig. 3).,common usage
+układ pomiarowy,measuring setup,Figs. 28 and 40: the test bench. 'measuring circuit' when it is a circuit.,common usage
+układ przetwarzający (sygnał czujnika),signal-conditioning circuit,,ISA-37.1
+układ sterowania cyfrowego,digital control system,,common usage
+układ W przetwarzający różnicę napięć na prąd wyjściowy,voltage-difference-to-current converter (block W),,thesis
+uniezależnienie od temperatury,making independent of temperature,'rendering temperature-independent'.,common usage
+uzależnić od temperatury,make temperature-dependent,,common usage
+uzależniony od temperatury,temperature-dependent,,common usage
+uzysk produkcyjny,production yield,"p. 85, in quotation marks in the thesis.",common usage
+w druku,in press,,common usage
+w funkcji temperatury,as a function of temperature,Very frequent; 'versus temperature' in figure captions.,common usage
+w procentach szerokości zakresu pomiarowego,as a percentage of span,'% FS' in data sheets; keep '% of span' in prose.,ISA-51.1
+w rozumieniu pkt. 2,in the sense of Section 2,,common usage
+wahania napięcia zasilającego,supply-voltage fluctuations,,common usage
+wartości elementów,component values,,common usage
+wartość górna / dolna zakresu,upper / lower range value,,ISA-51.1
+wartość końcowa zakresu pomiarowego,upper range value,ISA-51.1 'upper range-value'; 'full scale' in sensor data sheets. Symbol X_k / U_k.,ISA-51.1; ISA-37.1
+wartość krytyczna (współczynnika korelacji),critical value,,common usage
+wartość początkowa zakresu pomiarowego,lower range value,ISA-51.1 'lower range-value'. The thesis identifies it with 'zero' (tzw. 'zera'); in prose 'zero' is fine once the equivalence has been stated. Symbol X_p (measurand) / U_p (output).,ISA-51.1
+wartość zakresowa,full-scale value,,common usage
+warunek dodatkowy,additional condition,,common usage
+warunek swobody / warunki swobody,degree of freedom / degrees of freedom,"Literally 'freedom condition'; p. 58, 63, 120.",common usage
+warunek wystarczający / konieczny,sufficient / necessary condition,,common usage
+warunki kompensacji,compensation conditions,The settings that achieve compensation.,thesis
+warunki odniesienia / temperatura odniesienia,reference conditions / reference temperature,T_o.,VIM
+wdrożenie do produkcji,introduction into production,,common usage
+wdyfundowany,diffused,Resistor/transistor diffused into the silicon.,Bryzek 1990
+wejście ciśnienia,pressure inlet,Fig. 27 label; 'pressure port' also fine.,common usage
+węzeł (przetwornika),subassembly,p. 79/109: 'ciekawsze węzły przetwornika' = the more interesting subassemblies (functional blocks).,common usage
+wg,according to,,common usage
+wibracje,vibration,,common usage
+wielkość mierzona,measurand,ISA-37.1/VIM term; 'measured quantity' in plain prose. X in the thesis.,ISA-37.1; VIM
+wielkość nieelektryczna,non-electrical quantity,,common usage
+wielkość pochodna,derived quantity,"p. 31: pressure 'and derived quantities' (flow, level).",common usage
+wielomian aproksymujący,approximating polynomial,,common usage
+wielomian stopnia n,polynomial of degree n,The thesis uses stopień and rząd (order) interchangeably for polynomials; English prefers 'degree'. Keep 'order' only for 'krzywa czwartego rzędu' (fourth-order curve) if desired.,common usage
+włączony na przekątną mostka,connected across the bridge diagonal,,common usage
+włączony szeregowo / równolegle / szeregowo-równolegle,connected in series / in parallel / in series-parallel,,common usage
+woltomierz cyfrowy,digital voltmeter,HP 3490A.,common usage
+wpływ temperatury,effect of temperature,'influence of temperature' in the title context; 'temperature effects' in prose.,common usage
+wspornik,bracket,Fig. 27 label.,common usage
+wspólna szyna ujemna,common negative rail,,H&H
+współczynnik dzielnikowania,division ratio,WD = U_AB/U_DB. 'dzielnikowanie' is a coinage; 'divider ratio' also fine.,common usage
+współczynnik korelacji,correlation coefficient,,common usage
+współczynnik proporcjonalności,proportionality coefficient,,common usage
+współczynnik przetwarzania,conversion factor,Gain of block W (voltage-difference to current).,common usage
+współczynnik rozszerzalności temperaturowej (liniowej),(linear) coefficient of thermal expansion,,common usage
+współczynnik temperaturowy (rezystancji / napięcia),temperature coefficient (of resistance / of voltage),"TCR; β_p, β_z for junction voltages.",common usage
+współczynnik wagi,weighting factor,,common usage
+współczynnik zmniejszenia błędu,error-reduction factor,η = |δ_m/Δ_m|.,thesis
+wstępna kompensacja,preliminary compensation,Differential connection of the two gauges in the bridge.,common usage
+wydajność prądowa (źródła),source current,Literally 'current capacity'; means the current the source delivers.,common usage
+wygrzewanie / czas wygrzewania,thermal soak / soak time,"Time in the chamber for the temperature to settle (approx. 1.5 h). Not 'annealing', not 'burn-in'.",common usage
+wyniki badań,test results,,common usage
+wyniki metrologiczne,measurement performance,,common usage
+wyrażenie,expression,,common usage
+wyrób,product,,common usage
+wyrównanie się temperatur,temperature equalization,,common usage
+wyróżnik,discriminant,,common usage
+wyzerowanie,nulling,,common usage
+wzajemne uzależnienie (nastaw / kompensacji zera i zakresu),interaction,Instrumentation idiom: 'zero-span interaction'. For settings at different temperatures: 'mutual dependence of the settings'.,ISA-51.1 (interaction)
+wzmacniacz operacyjny,operational amplifier,,H&H
+wzmacniacz pomiarowy,instrumentation amplifier,Ref. [87] title; 'measuring amplifier' if literal.,H&H
+wzmocnienie,gain,,common usage
+zaciski wyjściowe,output terminals,,common usage
+zadajnik precyzyjny,precision pressure setter,Fig. 40 item V: a precision pneumatic regulator used to set input pressure.,common usage
+zadawać ciśnienie,apply a pressure,,common usage
+zakład przemysłowy / zakład produkcyjny,industrial plant / manufacturing plant,,common usage
+zakłócające pola elektromagnetyczne,interfering electromagnetic fields,,common usage
+"zakres (jako parametr, tzw. ""zakres"")",span,"CONTESTABLE. When the thesis says 'kompensacja zakresu', 'dryft zakresu', 'błąd temperaturowy zakresu' it means the upper-range-value / span parameter, not the measuring range. Render as 'span' (ISA 'thermal span shift'). p. 11 note: the thesis distinguishes b/ error of the upper value X_k and c/ error of span; both are 'span' in data-sheet English.",ISA-37.1; ISA-51.1
+zakres pomiarowy,measuring range,ISA-51.1 'range'. Do not use 'span' here; span is szerokość/rozpiętość zakresu.,ISA-51.1
+zakres regulacji,adjustment range,,common usage
+zakres stosowania,range of application,Not 'measuring range'.,common usage
+zakres sygnału wyjściowego,output signal range,,common usage
+zakres temperatur pracy,operating temperature range,T_a to T_b.,ISA-37.1
+zakresowa zmiana rezystancji,full-scale resistance change,,common usage
+zależność,relation,"Polish uses zależność for any formula; render as 'relation', 'expression' or 'equation (n)' according to context; 'dependence' when a functional dependence is meant.",common usage
+zależność (n) / wyrażenie (n),equation (n) / expression (n),Numbered displays are cited as 'zależność (12)' etc.,common usage
+zależność kwadratowa / sześcienna,quadratic / cubic relation,,common usage
+zapas elementów w magazynie,stock of components,,common usage
+zasilacz,power supply,Meratronik V-316.,common usage
+zasilacz stabilizowany / stabilizator,regulated power supply / voltage regulator,Block S.,H&H
+zasilanie prądowe / zasilacz stałoprądowy,constant-current excitation / constant-current supply,Fig. 28: 30 mA source.,W&H
+zastępczy błąd czujnika,equivalent sensor error,Error of the conditioning electronics referred to the sensor and added to the sensor's own error (p. 10). 'referred to the sensor' is the EE idiom (cf. 'referred to input').,thesis; H&H (referred to input)
+"zero (tzw. ""zero"")",zero,"Output at the lower range value; 'zero' / 'zero point' / 'offset' (MEMS: offset). Keep 'zero' to match 'zero drift', 'zeroing'.",ISA-37.1 (zero shift)
+zerowanie,zeroing,zerowanie mostka = balancing (nulling) the bridge; zerowanie przetwornika = zero adjustment; zerowanie błędu = nulling the error. Choose by object.,W&H; common usage
+zerowanie się (funkcji),vanishing (of a function),Mathematical sense: f_j(T_j) = 0.,common usage
+zespół,assembly,e.g. zespół mieszka; 'main units' of the transducer (p. 88).,common usage
+Zgłoszenie patentowe nr P. ...,Patent application No. P. ...,Polish application numbers.,common usage
+zgrubne ustawienie zakresu,coarse span setting,,common usage
+zintegrowany czujnik ciśnienia,integrated pressure sensor,National Semiconductor / Honeywell diffused-silicon sensors with on-chip electronics.,Zias & Hare 1972 [1]
+zintegrowany krzemowy czujnik piezorezystancyjny,integrated silicon piezoresistive sensor,,Bryzek 1990
+"złącze (mechaniczne, p. 102)",connector,Same Polish word as junction; on p. 102 it is the plug/socket to the potentiometer board.,common usage
+złącze baza-emiter / napięcie baza-emiter,base-emitter junction / base-emitter voltage,V_BE.,H&H
+złącze p-n,p-n junction,,common usage
+złączowy przyrząd półprzewodnikowy,junction semiconductor device,Diodes and transistors used as temperature sensors (section 3.4).,common usage
+zmiana temperatury otoczenia,change in ambient temperature,,common usage
+znormalizowany sygnał / sygnał standardowy,standard signal,"IEC 60381 standard signals: 4-20 mA, 0-20 mA, 1-5 V etc.",IEC 60381
+zrównoważenie mostka,balancing the bridge,,W&H
+zwory,jumpers,Fig. 8 label.,common usage
+źródło prądowe,current source,,H&H
+Ω / omy,ohm,Use the Ω sign in the translation; 'ułamków omów' = fractions of an ohm.,common usage

@@ -52,9 +52,20 @@ function escapeAttr(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
+// The transcription keeps the typescript's layout: each paragraph is one line opening with a
+// five-space indent, and columns of values or index entries are lined up with spaces, one per
+// line. In Markdown an indent of four spaces is a code block, so the indents come off, and every
+// line break is kept (breaks) so the lined-up entries stay on their own lines. A line opening with
+// typed numbering ("1. Zias A.R. ...") is not a Markdown ordered list, which would renumber it from
+// wherever the list happens to start: the bibliography's numbers are what the citations point at.
+export function dedent(markdown: string): string {
+  return markdown.replace(/^[ \t]+/gm, '').replace(/^(\d+)\.(?=[ \t])/gm, '$1\\.');
+}
+
 const marked = new Marked({
   async: false,
   gfm: true,
+  breaks: true,
   extensions: [blockMath, inlineMath],
   renderer: {
     image({ href, text }: Tokens.Image) {
@@ -70,7 +81,7 @@ const marked = new Marked({
 });
 
 export function renderMarkdown(markdown: string): string {
-  return marked.parse(markdown) as string;
+  return marked.parse(dedent(markdown)) as string;
 }
 
 export function renderInline(markdown: string): string {

@@ -28,11 +28,24 @@ export function fallbackTitle(section: Section, lang: Lang): string {
 }
 
 // The first top-level heading is the chapter's title, printed once above the text; the rest of the
-// section is the text.
-export function takeTitle(markdown: string): { title: string | null; rest: string } {
+// section is the text. Without one, a numbered section opens with its title as typed: the first
+// paragraph of text, when it carries the section's number ("8. BIBLIOGRAPHY"). A typed title can
+// run over several lines and break a word with a hyphen ("PIEZO-" / "RESISTIVE"); it is rejoined.
+export function takeTitle(markdown: string, section?: Section): { title: string | null; rest: string } {
   const m = /^#[ \t]+(.+?)[ \t#]*$/m.exec(markdown);
-  if (!m) return { title: null, rest: markdown };
-  return { title: m[1] ?? null, rest: markdown.slice(0, m.index) + markdown.slice(m.index + m[0].length) };
+  if (m) return { title: m[1] ?? null, rest: markdown.slice(0, m.index) + markdown.slice(m.index + m[0].length) };
+  if (!section || section === 'front') return { title: null, rest: markdown };
+
+  const lines = markdown.split('\n');
+  const first = lines.findIndex((l) => l.trim() !== '' && !l.trimStart().startsWith('<!--'));
+  if (first < 0 || !lines[first]!.trim().startsWith(`${section}. `)) return { title: null, rest: markdown };
+  let last = first;
+  while (last + 1 < lines.length && lines[last + 1]!.trim() !== '' && !lines[last + 1]!.trimStart().startsWith('<!--')) last++;
+  const title = lines
+    .slice(first, last + 1)
+    .map((l) => l.trim())
+    .reduce((acc, l) => (acc.endsWith('-') ? acc.slice(0, -1) + l : `${acc} ${l}`));
+  return { title, rest: [...lines.slice(0, first), ...lines.slice(last + 1)].join('\n') };
 }
 
 function noteMarker(lang: Lang) {
@@ -41,7 +54,7 @@ function noteMarker(lang: Lang) {
 
 export function buildChapter(section: Section, lang: Lang, markdown: string): Chapter {
   const { text, notes } = reading(markdown, noteMarker(lang));
-  const { title, rest } = takeTitle(text);
+  const { title, rest } = takeTitle(text, section);
   const html = title === null ? fallbackTitle(section, lang) : renderInline(title);
   const pages = splitPages(rest).map((p) => ({ scan: p.scan, printed: p.printed, html: renderMarkdown(p.body) }));
   return {
