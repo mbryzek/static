@@ -8,11 +8,11 @@ side by side. A static SvelteKit site (`@sveltejs/adapter-static`), prerendered 
 
 The thesis lives in the projects repo under `dads-thesis/`; this site publishes a snapshot of it.
 
-    scripts/pull-content.sh <commit>       # mbryzek/projects at that commit
     scripts/pull-content.sh --dir <path>   # a local dads-thesis checkout as it is on disk
 
-`--dir ~/Desktop/projects/dads-thesis` is how the text gets here while the projects repo is not
-pushed: the footer still names the projects commit, and a pull with uncommitted changes to a
+The projects repo encrypts every path at rest with git-crypt, so a clone of it holds ciphertext:
+the pull reads an unlocked checkout (`--dir ~/Desktop/projects/dads-thesis`) and refuses a locked
+one. The footer still names the projects commit, and a pull with uncommitted changes to a
 published file is marked `-dirty`.
 
 It writes:
@@ -27,8 +27,8 @@ It writes:
 | `content/stripped.txt`      | every bracketed span removed as a transcription description |
 
 The library labels (`lib`) and the examiners' reports (`rev-1`, `rev-2`, `rev-3`) are never
-copied. Commit what it writes, then build. When corrections land in projects, pull at the new
-commit, add an entry to `src/lib/data/changelog.json` crediting the contributors, and republish.
+copied. Commit what it writes, then build. When corrections land in projects, pull again from
+the unlocked checkout, add an entry to `src/lib/data/changelog.json` crediting the contributors, and republish.
 
 `npm run build` fails until `content/` holds a pull, so an empty site cannot be published.
 
