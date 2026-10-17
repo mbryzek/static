@@ -62,9 +62,28 @@ function trimBeforeRemoval(before: string, next: string | undefined): string {
   return next === undefined || /[ \t.,;:!?)\n]/.test(next) ? before.replace(/[ \t]+$/, '') : before;
 }
 
+// A translator note standing on a line of its own annotates the text above it: like assemble.py,
+// move it onto the end of the last line that is neither blank, a page comment nor display math, so
+// its marker lands there instead of on an empty line.
+export function attachNotes(markdown: string): string {
+  const out: string[] = [];
+  for (const line of markdown.split('\n')) {
+    if (line.startsWith('[TN:')) {
+      const at = out.findLastIndex((l) => l.trim() !== '' && !l.startsWith('<!--') && !l.trimStart().startsWith('$$'));
+      // A table row cannot take a marker after its last cell; the note then stays where it is.
+      if (at >= 0 && !out[at]!.trimStart().startsWith('|')) {
+        out[at] = out[at]!.trimEnd() + line.trim();
+        continue;
+      }
+    }
+    out.push(line);
+  }
+  return out.join('\n');
+}
+
 export function reading(markdown: string, noteMarker: (n: number) => string = (n) => `[${n}]`): Reading {
   const opaque: string[] = [];
-  const masked = markdown.replace(OPAQUE, (m) => `\uE000${opaque.push(m) - 1}\uE001`);
+  const masked = attachNotes(markdown).replace(OPAQUE, (m) => `\uE000${opaque.push(m) - 1}\uE001`);
   const restore = (s: string) => s.replace(PLACEHOLDER, (_, i: string) => opaque[Number(i)] ?? '');
 
   const notes: string[] = [];

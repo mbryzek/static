@@ -58,4 +58,12 @@ describe('figurePath', () => {
   ])('%s -> %s', (href, expected) => {
     expect(figurePath(href)).toBe(expected);
   });
+
+  it('takes the typed title line when there is no heading', () => {
+    const { title, rest } = takeTitle('<!-- scan p114 | printed page 111 -->\n8. BIBLIOGRAPHY\n\n1. Zias A.R.', '8');
+    expect(title).toBe('8. BIBLIOGRAPHY');
+    expect(rest).not.toContain('BIBLIOGRAPHY');
+    expect(takeTitle('Some text\n8. Not a title', '8').title).toBeNull();
+    expect(takeTitle('6. A PIEZO-\n   RESISTIVE TRANSDUCER\n\nText.', '6').title).toBe('6. A PIEZORESISTIVE TRANSDUCER');
+  });
 });

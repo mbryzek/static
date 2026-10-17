@@ -18,6 +18,16 @@ describe('reading', () => {
     expect(r.stripped).toEqual([]);
   });
 
+  it('attaches a note on its own line to the text above it', () => {
+    const r = reading('The sum:\n\n$$ H = 1 $$\n[TN: labels as printed.]\n\nNext.', (n) => `^${n}`);
+    expect(r.text).toBe('The sum:^1\n\n$$ H = 1 $$\n\nNext.');
+    expect(r.notes).toEqual(['labels as printed.']);
+  });
+
+  it('leaves a note under a table where it is', () => {
+    expect(reading('| a | b |\n\n[TN: as printed.]', (n) => `^${n}`).text).toBe('| a | b |\n\n^1');
+  });
+
   it('lifts translator notes into numbered endnotes, in order', () => {
     const r = reading('One.[TN: First note.] Two.[TN: Second, with $[a, b]$.]', (n) => `^${n}`);
     expect(r.text).toBe('One.^1 Two.^2');

@@ -11,6 +11,10 @@ The thesis lives in the projects repo under `dads-thesis/`; this site publishes 
     scripts/pull-content.sh <commit>       # mbryzek/projects at that commit
     scripts/pull-content.sh --dir <path>   # a local dads-thesis checkout as it is on disk
 
+`--dir ~/Desktop/projects/dads-thesis` is how the text gets here while the projects repo is not
+pushed: the footer still names the projects commit, and a pull with uncommitted changes to a
+published file is marked `-dirty`.
+
 It writes:
 
 | Path                        | From dads-thesis                                            |
@@ -31,9 +35,11 @@ commit, add an entry to `src/lib/data/changelog.json` crediting the contributors
 ## How the text is read
 
 `src/lib/thesis/reading.ts` ports `reading()` from `dads-thesis/checks/assemble.py`: a bracketed
-transcription description (`[Library stamp in the upper left corner]`) is removed, and a translator
-note `[TN: ...]` becomes a numbered endnote at the end of its chapter. Citations (`[3, 5]`), units
-(`[1/°C]`), math, links and the scan comments are left alone. Read `content/stripped.txt` after
+transcription description is removed when it opens with one of assemble.py's descriptors
+(`[stamp: ...]`, `[handwritten, top left: ...]`, `[inserted above line: ...]`), and a translator
+note `[TN: ...]` becomes a numbered endnote at the end of its chapter, attached to the line above it
+when it stands alone. Everything else in brackets is the thesis's text and stays: citations
+(`[3 ÷ 24]`), units, the translated titles in the bibliography, uncertain readings (`[?: ...]`). Read `content/stripped.txt` after
 every pull: it lists each removed span, so a span that was the author's own text shows up there.
 
 LaTeX in the Markdown (`$...$`, `$$...$$`, `\(...\)`, `\[...\]`) is typeset by KaTeX at build time.

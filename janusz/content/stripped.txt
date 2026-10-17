@@ -1,0 +1,48 @@
+pl/1.md	notes	0
+pl/2.md	notes	0
+pl/3.md	notes	0
+pl/4.md	stripped	[handwritten: błędu]
+pl/4.md	notes	0
+pl/5.md	notes	0
+pl/6.md	stripped	[inserted above line: funkcji]
+pl/6.md	stripped	[inserted above line: funkcji]
+pl/6.md	stripped	[inserted above line: funkcji]
+pl/6.md	notes	0
+pl/7.md	notes	0
+pl/8.md	notes	0
+pl/9.md	notes	0
+pl/front.md	stripped	[front cover: dark green cloth binding, no printed text]
+pl/front.md	stripped	[label, lower spine edge, printed: R.002755]
+pl/front.md	stripped	[inside front cover / pastedown]
+pl/front.md	stripped	[handwritten, top left: + 3 opinie]
+pl/front.md	stripped	[stamp: ex libris bookplate — POLITECHNIKI WARSZAWSKIEJ / EX LIBRIS / BIBLIOTEKI GŁÓWNEJ]
+pl/front.md	stripped	[handwritten on bookplate: R. 2755]
+pl/front.md	stripped	[handwritten, top: [681.2.08 : 536.4 : 537.311.33] : 043]
+pl/front.md	stripped	[verso of title page; bleed-through of the title page not transcribed]
+pl/front.md	stripped	[stamp, oval, red: POLITECHNIKA WARSZAWSKA / Biblioteka Główna]
+pl/front.md	stripped	[handwritten inside the stamp, blue ink: R. 2755]
+pl/front.md	stripped	[handwritten, bottom, pencil: 167-2-78/d]
+pl/front.md	stripped	[dedication page; bleed-through of printed page 5 (1. Wstęp) not transcribed]
+pl/front.md	notes	0
+en/1.md	notes	0
+en/2.md	notes	6
+en/3.md	notes	10
+en/4.md	notes	25
+en/5.md	notes	3
+en/6.md	notes	10
+en/7.md	notes	1
+en/8.md	notes	0
+en/9.md	notes	5
+en/front.md	stripped	[front cover: dark green cloth binding, no printed text]
+en/front.md	stripped	[label, lower spine edge, printed: R.002755]
+en/front.md	stripped	[inside front cover / pastedown]
+en/front.md	stripped	[handwritten, top left: + 3 opinie ("+ 3 reviews")]
+en/front.md	stripped	[stamp: ex libris bookplate — POLITECHNIKI WARSZAWSKIEJ / EX LIBRIS / BIBLIOTEKI GŁÓWNEJ ("Warsaw University of Technology / Ex libris / Main Library")]
+en/front.md	stripped	[handwritten on bookplate: R. 2755]
+en/front.md	stripped	[handwritten, top: [681.2.08 : 536.4 : 537.311.33] : 043]
+en/front.md	stripped	[verso of title page; bleed-through of the title page not transcribed]
+en/front.md	stripped	[stamp, oval, red: POLITECHNIKA WARSZAWSKA / Biblioteka Główna ("Warsaw University of Technology / Main Library")]
+en/front.md	stripped	[handwritten inside the stamp, blue ink: R. 2755]
+en/front.md	stripped	[handwritten, bottom, pencil: 167-2-78/d]
+en/front.md	stripped	[dedication page; bleed-through of printed page 5 (1. Wstęp) not transcribed]
+en/front.md	notes	2

@@ -32,10 +32,16 @@ if [ "$1" = "--dir" ]; then
   [ $# -eq 2 ] || usage
   src=$(cd "$2" && pwd)
   commit=$(git -C "$src" rev-parse HEAD 2>/dev/null || echo "")
-  if [ -n "$commit" ] && [ -n "$(git -C "$src" status --porcelain -- . 2>/dev/null)" ]; then
+  # Dirty means a published file differs from the commit; the rest of the tree is not copied.
+  published=(source/pl/sections en glossary/glossary.csv source/figures)
+  if [ -n "$commit" ] && [ -n "$(cd "$src" && git status --porcelain -- "${published[@]}" 2>/dev/null)" ]; then
     commit="$commit-dirty"
   fi
-  repo="local:$src"
+  # The footer names the repository, never a path on someone's disk: a checkout of the projects
+  # repo reads as mbryzek/projects even when the commit is not pushed yet.
+  remote=$(git -C "$src" remote get-url origin 2>/dev/null || echo "")
+  repo=$(printf '%s' "$remote" | sed -nE 's#.*github\.com[:/]([^/]+/[^/.]+)(\.git)?$#\1#p')
+  [ -n "$repo" ] || repo="local"
 else
   [ $# -eq 1 ] || usage
   git clone --quiet --filter=blob:none --no-checkout --sparse "$REPO_URL" "$work/projects"
