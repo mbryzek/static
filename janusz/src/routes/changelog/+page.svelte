@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { changelog } from '#lib/data/changelog.ts';
+  let { data } = $props();
+  const changelog = $derived(data.changelog);
 </script>
 
 <svelte:head>
@@ -12,10 +13,12 @@
   <p class="empty">Brak zmian od publikacji. · No corrections yet since publication.</p>
 {:else}
   <ol class="changelog">
-    {#each changelog as entry (entry.commit)}
+    {#each changelog as entry, i (i)}
       <li>
         <time datetime={entry.date}>{entry.date}</time>
-        <p>{entry.summary}</p>
+        {#each entry.changes as change, j (j)}
+          <p>{change}</p>
+        {/each}
         {#if entry.contributors.length > 0}
           <p class="credit">Dziękujemy · Thanks to {entry.contributors.join(', ')}</p>
         {/if}

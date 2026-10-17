@@ -7,9 +7,9 @@
 # There is no mode that clones mbryzek/projects: that repo encrypts every path at rest with
 # git-crypt, so a clone holds ciphertext. The pull reads an unlocked checkout instead.
 #
-# Writes content/ (the published sections in Polish and English, the glossary, source.json naming
-# the commit, stripped.txt) and static/figures/ (each rys-NN.png, downscaled for the web). Commit
-# what it writes and rebuild; rerun it when corrections land in projects.
+# Writes content/ (the published sections in Polish and English, the glossary, the changelog,
+# source.json naming the commit, stripped.txt) and static/figures/ (each rys-NN.png, downscaled for
+# the web). Commit what it writes and rebuild; rerun it when corrections land in projects.
 #
 # Only the published sections are copied: front and 1-9. lib (the library labels) and rev-1..rev-3
 # (the examiners' reports) never leave the projects repo.
@@ -56,6 +56,10 @@ for s in "${SECTIONS[@]}"; do
 done
 need "$src/glossary/glossary.csv"
 cp "$src/glossary/glossary.csv" "$site/content/glossary.csv"
+# The credits for corrections readers sent, written by dads-thesis/checks/intake.py; absent until
+# the first one lands.
+rm -f "$site/content/CHANGELOG.md"
+[ -f "$src/CHANGELOG.md" ] && cp "$src/CHANGELOG.md" "$site/content/CHANGELOG.md"
 
 downscale() { # downscale <in> <out>: at most FIGURE_MAX_PX on the longer side, never enlarged
   if command -v sips >/dev/null 2>&1; then

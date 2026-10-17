@@ -22,13 +22,16 @@ It writes:
 | `content/pl/<s>.md`         | `source/pl/sections/<s>.md`, s = front, 1-9                 |
 | `content/en/<s>.md`         | `en/<s>.md`                                                 |
 | `content/glossary.csv`      | `glossary/glossary.csv` (polish, english, notes)            |
+| `content/CHANGELOG.md`      | `CHANGELOG.md`, when a correction has landed                |
 | `static/figures/rys-NN.png` | `source/figures/rys-NN.png`, at most 1600 px a side         |
 | `content/source.json`       | the commit, printed in every page footer                    |
 | `content/stripped.txt`      | every bracketed span removed as a transcription description |
 
 The library labels (`lib`) and the examiners' reports (`rev-1`, `rev-2`, `rev-3`) are never
 copied. Commit what it writes, then build. When corrections land in projects, pull again from
-the unlocked checkout, add an entry to `src/lib/data/changelog.json` crediting the contributors, and republish.
+the unlocked checkout and republish: the corrections intake (`dads-thesis/checks/intake.py`)
+writes the credits into `CHANGELOG.md` in the same commit as the corrections, and `/changelog` is
+built from it.
 
 `npm run build` fails until `content/` holds a pull, so an empty site cannot be published.
 
