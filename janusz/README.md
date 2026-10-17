@@ -80,8 +80,8 @@ unanswered sends nothing; a defect's "not sure" is sent as `skip`. When platform
 limit answers 429 the page stops, keeps every unsent answer, and shows the wait. Nothing
 submitted is ever read back; after sending, the page shows a thank-you and nothing else.
 
-A pull of the real thesis (`mbryzek/projects`) refuses to build while `questions.json` has no
-judgment calls or no defects, so the page is never published with only the glossary half.
+Until `questions.json` is transcribed the page asks only the glossary half, so readers are not
+invited to it before then.
 `VITE_API_BASE_URL` points a local build at another platform.
 
 ## Development

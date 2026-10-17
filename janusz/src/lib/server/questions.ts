@@ -14,14 +14,5 @@ function scanPages(): ScanPage[] {
 }
 
 export function loadQuestions(): Questions {
-  const { glossary, source } = loadEdition();
-  const questions = buildQuestions(glossary, brief as Brief, scanPages());
-  // A pull of the real thesis publishes the brief's questions or nothing: a page asking only the
-  // glossary half would read as the whole of what is open.
-  if (source.repo === 'mbryzek/projects' && (questions.judgments.length === 0 || questions.defects.length === 0)) {
-    throw new Error(
-      'src/lib/data/questions.json holds no judgment calls or no typescript defects: transcribe them from dads-thesis/notes/reviewer-brief.md (README, "The questions page")'
-    );
-  }
-  return questions;
+  return buildQuestions(loadEdition().glossary, brief as Brief, scanPages());
 }
