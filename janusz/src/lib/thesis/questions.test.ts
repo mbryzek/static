@@ -1,6 +1,5 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import brief from '#lib/data/questions.json';
 import { parseGlossary } from './glossary.ts';
 import { buildQuestions, firstUse, slug, type Brief, type ScanPage } from './questions.ts';
 
@@ -59,9 +58,5 @@ describe('buildQuestions', () => {
     expect(() => buildQuestions([], { judgments: [], defects: [{ ...sample.defects[0]!, scan: 'p999' }] }, pages)).toThrow(/p999/);
     expect(() => buildQuestions([], { judgments: [], defects: [{ ...sample.defects[0]!, key: 'A 1' }] }, pages)).toThrow(/key/);
     expect(() => buildQuestions([], { judgments: [], defects: [sample.defects[0]!, sample.defects[0]!] }, pages)).toThrow(/share/);
-  });
-
-  it('accepts the committed questions.json', () => {
-    expect(() => buildQuestions(glossary, brief as Brief, pages)).not.toThrow();
   });
 });

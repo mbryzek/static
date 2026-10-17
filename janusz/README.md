@@ -89,8 +89,10 @@ unanswered sends nothing; a defect's "not sure" is sent as `skip`. When platform
 limit answers 429 the page stops, keeps every unsent answer, and shows the wait. Nothing
 submitted is ever read back; after sending, the page shows a thank-you and nothing else.
 
-Until `questions.json` is transcribed the page asks only the glossary half, so readers are not
-invited to it before then.
+The brief's terminology list also names two terms no glossary row marks CONTESTABLE: przetwornik →
+transducer, and "element" vs "component" for the compensation-setting elements. Those two are judgment
+calls in `questions.json` (`term-przetwornik`, `term-element`), so a glossary row marked CONTESTABLE
+later must not repeat one of them. `src/lib/server/questions.test.ts` pins every id the page asks.
 `VITE_API_BASE_URL` points a local build at another platform.
 
 ## Development
