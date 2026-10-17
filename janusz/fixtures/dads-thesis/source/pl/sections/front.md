@@ -4,6 +4,6 @@
 
 Janusz Bryzek
 
-[Pieczątka biblioteki w lewym górnym rogu]
+[stamp: pieczątka biblioteki w lewym górnym rogu]
 
 Politechnika Warszawska, 1978

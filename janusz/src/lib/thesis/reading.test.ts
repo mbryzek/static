@@ -12,6 +12,12 @@ describe('reading', () => {
     expect(reading('Janusz Bryzek\n\n[Library stamp in the upper left corner]\n\n1978').text).toBe('Janusz Bryzek\n\n\n\n1978');
   });
 
+  it('keeps an uncertain reading, never as a link', () => {
+    const r = reading('czujnika [?:\\(\\delta\\) missing](T) w [?]');
+    expect(r.text).toBe('czujnika &#91;?:\\(\\delta\\) missing&#93;(T) w &#91;?&#93;');
+    expect(r.stripped).toEqual([]);
+  });
+
   it('lifts translator notes into numbered endnotes, in order', () => {
     const r = reading('One.[TN: First note.] Two.[TN: Second, with $[a, b]$.]', (n) => `^${n}`);
     expect(r.text).toBe('One.^1 Two.^2');
@@ -38,8 +44,13 @@ describe('reading', () => {
 describe('isTranscriptionDescription', () => {
   it.each([
     ['illegible', true],
-    ['Figure: a bridge circuit', true],
-    ['odręczna poprawka na marginesie', true],
+    ['handwritten, top left: + 3 opinie', true],
+    ['inserted above line: funkcji', true],
+    ['3 ÷ 24', false],
+    ['1, 32 ÷ 76', false],
+    ['Dr Eng., Associate Professor', false],
+    ['A method of temperature compensation of electronic measuring transducers.', false],
+    ['?:likely T_1 + T_2 = 2T_0', false],
     ['3, 5', false],
     ['12', false],
     ['mV/°C', false],
