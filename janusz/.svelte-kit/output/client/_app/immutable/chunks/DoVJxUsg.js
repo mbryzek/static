@@ -1,1 +1,0 @@
-var e=[`pl`,`en`,`pl-en`],t={pl:`Polski`,en:`English`,"pl-en":`Obok siebie · Side by side`};function n(t){return e.includes(t)}var r=`thesis-mode`;function i(e){return e===`en`?`en`:`pl`}export{n as a,i,t as n,r,e as t};

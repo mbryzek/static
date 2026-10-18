@@ -1,1 +1,0 @@
-var e=[`front`,`1`,`2`,`3`,`4`,`5`,`6`,`7`,`8`,`9`];function t(t){return e.includes(t)}function n(e,t){return`tn-${e}-${t}`}export{n,t};
