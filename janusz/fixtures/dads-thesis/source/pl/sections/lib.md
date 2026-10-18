@@ -1,3 +1,0 @@
-# Etykiety biblioteczne
-
-NIE PUBLIKOWAĆ

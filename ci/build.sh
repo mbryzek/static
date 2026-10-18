@@ -8,15 +8,16 @@
 #
 #   - ASSET DIRECTORIES (`michaelbryzek/`, `lakeviewsummit-ui/`): images served
 #     as they are. Nothing builds them, so a tree holding only these is green.
-#   - APP DIRECTORIES: any top-level directory with a `package.json` (`janusz/`,
-#     a static SvelteKit site). Each is built on its own, in its own directory,
+#   - APP DIRECTORIES: any top-level directory with a `package.json` (none at
+#     present; janusz.bryzek.com moved to mbryzek/janusz, ISS-21167). Each is
+#     built on its own, in its own directory,
 #     with the shape every SvelteKit repo in the fleet uses: `npm ci`, then
 #     `npm run check` (svelte-check, eslint, the unit suite), then
 #     `npm run build`. No Playwright: a browser suite cannot produce a verdict on
 #     a runner, and a red for an infrastructure reason is worse than no suite.
 #
 # AN APP WHOSE CONTENT IS PULLED IN builds only once a pull is committed. An app
-# carrying `scripts/pull-content.sh` (janusz) publishes a snapshot of text kept
+# carrying `scripts/pull-content.sh` publishes a snapshot of text kept
 # in another repository, and its `npm run build` fails on purpose until
 # `content/` holds one, so that an empty site cannot be published. Before that
 # snapshot is committed, `check` is the whole verdict and the build is reported
