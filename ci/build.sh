@@ -34,6 +34,18 @@
 #   dev ci verify --repo mbryzek/static --sha <head sha> --pr <n> --no-post
 #
 # ci-needs:
+#
+# TEST HEALTH (ISS-24448, DES-18577 "Every repository with CI"). This repository
+# has no test runner but this script, so each check below is one SPEC: `ci_step`
+# from `ci/test-steps.sh` -- devops' `templates/ci/test-steps.sh`, byte for byte,
+# which says how -- runs it, writes its JUnit report where the line below names,
+# leaves out a step the lists hold as quarantined or slow, and reruns a failed
+# step once. A failed step does not stop the build: every step runs and
+# `ci_steps_end` fails it. A step's name is its spec's name in the lists and the
+# ledger; each app is the step `app-<dir>`, so renaming a directory starts its
+# history over.
+# ci-test-reports: target/ci-test-reports/*.xml
+# ci-test-lists: required
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -45,22 +57,23 @@ ci_report() { # ci_report covered|not-run "<short phrase>"
   [ -z "${CI_COVERAGE_FILE:-}" ] || printf '%s\n' "$line" >>"$CI_COVERAGE_FILE"
 }
 
+# One app's whole build, run as its step: `npm ci`, `npm run check`, and
+# `npm run build` unless the app waits on pulled content (above).
 build_app() { # build_app <dir>
   local app=$1
   echo "== $app: node $(node --version)"
-  (
-    cd "$app"
-    npm ci
-    npm run check
-  )
-  if [ -x "$app/scripts/pull-content.sh" ] && [ ! -f "$app/content/source.json" ]; then
-    ci_report covered "$app check"
-    ci_report not-run "$app build (no content pulled)"
+  cd "$app"
+  npm ci
+  npm run check
+  if awaits_content .; then
+    echo "$app: no content pulled, build not run"
     return 0
   fi
-  (cd "$app" && npm run build)
-  ci_report covered "$app check + build"
+  npm run build
 }
+
+# Whether the app [1] stops at check because no content snapshot is committed.
+awaits_content() { [ -x "$1/scripts/pull-content.sh" ] && [ ! -f "$1/content/source.json" ]; }
 
 shopt -s nullglob
 apps=()
@@ -68,11 +81,22 @@ for manifest in */package.json; do
   apps+=("$(dirname "$manifest")")
 done
 
+source ci/test-steps.sh
+ci_steps_begin
+
+ci_step test-steps-template "ci/test-steps.sh is devops' template" ci_steps_template_check
+
 if [ ${#apps[@]} -eq 0 ]; then
   ci_report covered "assets only, no app to build"
-  exit 0
 fi
 
-for app in "${apps[@]}"; do
-  build_app "$app"
+for app in ${apps[@]+"${apps[@]}"}; do
+  if awaits_content "$app"; then
+    ci_report not-run "$app build (no content pulled)"
+    ci_step "app-$app" "$app check" build_app "$app"
+  else
+    ci_step "app-$app" "$app check + build" build_app "$app"
+  fi
 done
+
+ci_steps_end
