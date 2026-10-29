@@ -33,8 +33,6 @@
 #
 #   dev ci verify --repo mbryzek/static --sha <head sha> --pr <n> --no-post
 #
-# ci-needs:
-#
 # TEST HEALTH (ISS-24448, DES-18577 "Every repository with CI"). This repository
 # has no test runner but this script, so each check below is one SPEC: `ci_step`
 # from `ci/test-steps.sh` -- devops' `templates/ci/test-steps.sh`, byte for byte,
