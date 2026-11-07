@@ -35,7 +35,7 @@
 #
 # TEST HEALTH (ISS-24448, DES-18577 "Every repository with CI"). This repository
 # has no test runner but this script, so each check below is one SPEC: `ci_step`
-# from `ci/test-steps.sh` -- devops' `templates/ci/test-steps.sh`, byte for byte,
+# from devops' `templates/ci/test-steps.sh`, sourced from the release,
 # which says how -- runs it, writes its JUnit report where the line below names,
 # leaves out a step the lists hold as quarantined or slow, and reruns a failed
 # step once. A failed step does not stop the build: every step runs and
@@ -79,10 +79,12 @@ for manifest in */package.json; do
   apps+=("$(dirname "$manifest")")
 done
 
-source ci/test-steps.sh
+# devops' Test Health steps, sourced from the release on PATH rather than copied
+# (ISS-53964), so a change to them is one devops release and no pull request here.
+ci_steps_lib=$(dev ci template ci/test-steps.sh) || exit 75
+source "$ci_steps_lib"
 ci_steps_begin
 
-ci_step test-steps-template "ci/test-steps.sh is devops' template" ci_steps_template_check
 
 if [ ${#apps[@]} -eq 0 ]; then
   ci_report covered "assets only, no app to build"
