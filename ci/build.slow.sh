@@ -16,15 +16,6 @@
 #     `npm run build`. No Playwright: a browser suite cannot produce a verdict on
 #     a runner, and a red for an infrastructure reason is worse than no suite.
 #
-# AN APP WHOSE CONTENT IS PULLED IN builds only once a pull is committed. An app
-# carrying `scripts/pull-content.sh` publishes a snapshot of text kept
-# in another repository, and its `npm run build` fails on purpose until
-# `content/` holds one, so that an empty site cannot be published. Before that
-# snapshot is committed, `check` is the whole verdict and the build is reported
-# as not run. This script never pulls the fixture itself: it also runs in a
-# developer's working tree before a push, and a fixture pull there is a
-# `content/` the app's README says must not be committed.
-#
 # Formatting is advisory and is not run here (ISS-19427): the repository has no
 # root `package.json`, so `dev fmt report` has no formatter to ask at the root,
 # and `dev agent pr create` formats what a branch changed before it publishes.
@@ -44,6 +35,7 @@
 # history over.
 # ci-test-reports: target/ci-test-reports/*.xml
 # ci-test-lists: required
+# ci-compile: true
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -55,23 +47,15 @@ ci_report() { # ci_report covered|not-run "<short phrase>"
   [ -z "${CI_COVERAGE_FILE:-}" ] || printf '%s\n' "$line" >>"$CI_COVERAGE_FILE"
 }
 
-# One app's whole build, run as its step: `npm ci`, `npm run check`, and
-# `npm run build` unless the app waits on pulled content (above).
+# One app's whole build, run as its step: `npm ci`, `npm run check`, `npm run build`.
 build_app() { # build_app <dir>
   local app=$1
   echo "== $app: node $(node --version)"
   cd "$app"
   npm ci
   npm run check
-  if awaits_content .; then
-    echo "$app: no content pulled, build not run"
-    return 0
-  fi
   npm run build
 }
-
-# Whether the app [1] stops at check because no content snapshot is committed.
-awaits_content() { [ -x "$1/scripts/pull-content.sh" ] && [ ! -f "$1/content/source.json" ]; }
 
 shopt -s nullglob
 apps=()
@@ -85,18 +69,12 @@ ci_steps_lib=$(dev ci template ci/test-steps.sh) || exit 75
 source "$ci_steps_lib"
 ci_steps_begin
 
-
 if [ ${#apps[@]} -eq 0 ]; then
   ci_report covered "assets only, no app to build"
 fi
 
 for app in ${apps[@]+"${apps[@]}"}; do
-  if awaits_content "$app"; then
-    ci_report not-run "$app build (no content pulled)"
-    ci_step "app-$app" "$app check" build_app "$app"
-  else
-    ci_step "app-$app" "$app check + build" build_app "$app"
-  fi
+  ci_step "app-$app" "$app check + build" build_app "$app"
 done
 
 ci_steps_end
